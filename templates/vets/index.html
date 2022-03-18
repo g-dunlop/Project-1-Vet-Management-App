@@ -7,7 +7,12 @@
 {% for vet in vets %}
 <p>Name: {{vet.first_name}} {{vet.last_name}}</p>
 
+<div>
 
+    <form action="/vets/{{vet.id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
 
 {% endfor %}
 

@@ -19,7 +19,7 @@ def select_all():
     sql = "SELECT * FROM owners"
     results = run_sql(sql)
     for row in results:
-        owner = Owner(row['name'], row['phone_number'], row['email_address'], row['address'])
+        owner = Owner(row['name'], row['phone_number'], row['email_address'], row['address'], row['id'])
         owners.append(owner)
     return owners
 

@@ -10,6 +10,14 @@
 <p>Email: {{owner.email_address}}</p>
 <p>Address: {{owner.address}}</p>
 
+<div>
+    <form action="/owners/{{owner.id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
+
 {% endfor %}
+
+<p><a href="owners/new">Add Owner</a></p>
 
 {% endblock %}
