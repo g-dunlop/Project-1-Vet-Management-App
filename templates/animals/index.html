@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Vet Management App</h1>
+
+{% for animal in animals %}
+<p>Name: {{animal.name}}</p>
+<p>D/o/B: {{animal.date_of_birth}}</p>
+<p>Type: {{animal.type}}</p>
+<p>Owner: {{animal.owner.name}}</p>
+<p>Vet: {{animal.vet.first_name}} {{animal.vet.last_name}}</p>
+<p>Treatment Notes:{{animal.treatment_notes}}</p>
+{% endfor %}
+{% endblock %}

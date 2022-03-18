@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Vet Management App</h1>
+
+{% for vet in vets %}
+<p>Name: {{vet.first_name}} {{vet.last_name}}</p>
+
+
+{% endfor %}
+
+{% endblock %}
