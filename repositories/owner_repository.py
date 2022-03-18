@@ -34,3 +34,7 @@ def select(id):
     return owner
 
     
+def delete(id):
+    sql = "DELETE FROM owners WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

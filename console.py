@@ -44,6 +44,10 @@ animal_repository.save(animal2)
 # vet = vet_repository.select(40)
 # print(vet.__dict__)
 
-animals = animal_repository.select_all()
-for animal in animals:
-    print(animal.__dict__)
+# animals = animal_repository.select_all()
+# for animal in animals:
+#     print(animal.__dict__)
+
+# animal_repository.delete(11)
+# vet_repository.delete(12)
+# owner_repository.delete(11)

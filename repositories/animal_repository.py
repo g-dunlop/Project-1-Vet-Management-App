@@ -30,3 +30,8 @@ def select_all():
         animal = Animal(row['name'], row['date_of_birth'], row['type'], owner, vet, row['treatment_notes'])
         animals.append(animal)
     return(animals)
+
+def delete(id):
+    sql = "DELETE FROM animals WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
