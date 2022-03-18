@@ -9,3 +9,7 @@ def save(owner):
     owner.id = results[0]['id']
     return owner
 
+def delete_all():
+    sql = "DELETE FROM owners"
+    run_sql(sql)
+
