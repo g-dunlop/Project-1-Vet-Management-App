@@ -5,4 +5,4 @@ class Animal:
         self.type = type
         self.owner = owner
         self.vet = vet
-        self.treatement_notes = treatment_notes
+        self.treatment_notes = treatment_notes
