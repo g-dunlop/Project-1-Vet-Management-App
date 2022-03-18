@@ -27,7 +27,7 @@ def select_all():
     for row in results:
         owner = owner_repository.select(row['owner_id'])
         vet = vet_repository.select(row['vet_id'])
-        animal = Animal(row['name'], row['date_of_birth'], row['type'], owner, vet, row['treatment_notes'])
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], owner, vet, row['treatment_notes'], row['id'])
         animals.append(animal)
     return(animals)
 
