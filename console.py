@@ -15,9 +15,35 @@ owner_repository.delete_all()
 vet1 = Vet('Martina', [])
 vet_repository.save(vet1)
 
+vet2 = Vet('James Herriot', [])
+vet_repository.save(vet2)
+
 owner1 = Owner("Laurie", "08564489732", "laurie.surname@mail.com", "5 The House, Larbert, FK9 2BE")
 owner_repository.save(owner1)
+
+owner2 = Owner("Graeme", "08564489733", "graeme.surname@mail.com", "5 The House, Larbert, FK9 2BE")
+owner_repository.save(owner2)
 
 animal1 = Animal("Tony", "11/11/2017", "cat", owner1, vet1, [])
 animal_repository.save(animal1)
 
+animal2 = Animal("Collin", "15/12/2018", "cat", owner2, vet1, ["17/02/2020", "Martina", "Diarrhea", "antibiotics"])
+animal_repository.save(animal2)
+
+# vets = vet_repository.select_all()
+# for vet in vets:
+#     print(vet.__dict__)
+
+# owners = owner_repository.select_all()
+# for owner in owners:
+#     print(owner.__dict__)
+
+# owner = owner_repository.select(21)
+# print(owner.__dict__)
+
+# vet = vet_repository.select(40)
+# print(vet.__dict__)
+
+animals = animal_repository.select_all()
+for animal in animals:
+    print(animal.__dict__)
