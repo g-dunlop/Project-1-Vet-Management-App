@@ -4,8 +4,7 @@
 
 <h1>Vet Management App</h1>
 
-{% for animal in animals %}
-<p>Name: <a href="/animals/{{animal.id}}">{{animal.name}}</a></p>
+<p>Name: {{animal.name}}</a></p>
 <p>D/o/B: {{animal.date_of_birth}}</p>
 <p>Type: {{animal.type}}</p>
 <p>Owner: {{animal.owner.name}}</p>
@@ -13,13 +12,17 @@
 <p>Treatment Notes:{{animal.treatment_notes}}</p>
 
 <div>
-<!-- <form action="/animals/{{animal.id}}/delete" method="POST">
+  <form action="/animals/{{animal.id}}/edit" method="GET">
+    <button>Edit</button>
+  </form>
+</div>
+
+<div>
+<form action="/animals/{{animal.id}}/delete" method="POST">
     <button>Delete</button>
   </form>
-</div> -->
-{% endfor %}
+</div>
 
-<p><a href="animals/new">Add Animal</a></p>
    
 
 {% endblock %}

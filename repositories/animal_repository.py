@@ -41,3 +41,15 @@ def update(animal):
     values = [animal.name, animal.date_of_birth, animal.type, animal.owner.id, animal.vet.id, animal.treatment_notes, animal.id]
     print(values)
     run_sql(sql, values)
+
+def select(id):
+    animal = None
+    sql = "SELECT * FROM animals WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        owner = owner_repository.select(result['owner_id'])
+        vet = vet_repository.select(result['vet_id'])
+        animal = Animal(result['name'], result['date_of_birth'], result['type'], owner, vet, result['treatment_notes'], result['id'])
+    return animal

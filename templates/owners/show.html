@@ -4,20 +4,24 @@
 
 <h1>Vet Management App</h1>
 
-{% for owner in owners %}
-<p>Name: <a href="/owners/{{owner.id}}">{{owner.name}}</a></p>
+<p>Name: {{owner.name}}</a></p>
 <p>Phone Number: {{owner.phone_number}}</p>
 <p>Email: {{owner.email_address}}</p>
 <p>Address: {{owner.address}}</p>
 
-<!-- <div>
+<div>
+    <form action="/owners/{{owner.id}}/edit" method="GET">
+      <button>Edit</button>
+    </form>
+  </div>
+
+<div>
     <form action="/owners/{{owner.id}}/delete" method="POST">
       <button>Delete</button>
     </form>
-  </div> -->
+  </div>
 
-{% endfor %}
 
-<p><a href="owners/new">Add Owner</a></p>
+
 
 {% endblock %}

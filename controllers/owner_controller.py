@@ -29,3 +29,23 @@ def create_vet():
 def delete_owner(id):
     owner_repository.delete(id)
     return redirect('/owners')
+
+@owners_blueprint.route("/owners/<id>")
+def show_owner(id):
+    owner = owner_repository.select(id)
+    return render_template('owners/show.html', owner = owner)
+
+@owners_blueprint.route("/owners/<id>/edit")
+def edit_owner(id):
+    owner = owner_repository.select(id)
+    return render_template('owners/edit.html', owner = owner)
+
+@owners_blueprint.route("/owners/<id>", methods = ['POST'])
+def update_owners(id):
+    name = request.form['name']
+    phone_number = request.form['phone_number']
+    email_address = request.form['email_address']
+    address = request.form['address']
+    owner = Owner(name, phone_number, email_address, address, id)
+    owner_repository.update(owner)
+    return redirect('/owners')

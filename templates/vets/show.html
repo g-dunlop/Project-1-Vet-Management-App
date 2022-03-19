@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Vet Management App</h1>
+
+
+<p>Name: {{vet.first_name}} {{vet.last_name}}</p>
+
+<div>
+    <form action="/vets/{{vet.id}}/edit" method="GET">
+      <button>Edit</button>
+    </form>
+  </div>
+
+
+<div>
+    <form action="/vets/{{vet.id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
+
+
+
+
+
+{% endblock %}
