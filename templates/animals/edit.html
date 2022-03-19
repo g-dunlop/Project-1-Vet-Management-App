@@ -20,14 +20,14 @@
         <div class="form-input">
             <label for="type">Type: </label>
             <select id="type" name="type" required>
-                <option value="cat">Cat</option>
-                <option value="dog">Dog</option>
-                <option value="hamster">Hamster</option>
-                <option value="rabbit">Rabbit</option>
-                <option value="parrot">Parrot</option>
-                <option value="cow">Cow</option>
-                <option value="pig">Pig</option>
-                <option value="horse">Horse</optopm>
+                <option value="cat" {% if animal.type == "cat" %} selected="selected"{% endif %}>Cat</option>
+                <option value="dog" {% if animal.type == "dog" %} selected="selected"{% endif %}>Dog</option>
+                <option value="hamster" {% if animal.type == "hamster" %} selected="selected"{% endif %}>Hamster</option>
+                <option value="rabbit" {% if animal.type == "rabbit" %} selected="selected"{% endif %}>Rabbit</option>
+                <option value="parrot" {% if animal.type == "parrott" %} selected="selected"{% endif %}>Parrot</option>
+                <option value="cow" {% if animal.type == "cow" %} selected="selected"{% endif %}>Cow</option>
+                <option value="pig" {% if animal.type == "pig" %} selected="selected"{% endif %}>Pig</option>
+                <option value="horse" {% if animal.type == "horse" %} selected="selected"{% endif %}>Horse</option>
             </select>
         </div>
 
@@ -35,7 +35,8 @@
             <label for="owner">Owner:</label>
             <select id="owner" name="owner_id">
             {% for owner in all_owners %}
-                <option value="{{ owner.id }}">{{owner.full_name }}</option>
+                <option value="{{ owner.id }}" {% if animal.owner.id == owner.id %} selected="selected"{% endif %}>
+                    {{owner.full_name }}</option>
             {% endfor %}
             </select>
         </div>
@@ -44,7 +45,9 @@
             <label for="vet">Vet:</label>
             <select id="vet" name="vet_id">
                 {% for vet in all_vets %}
-                <option value="{{ vet.id }}">{{vet.first_name }} {{ vet.last_name }}</option>
+                <option value="{{ vet.id }}"
+                    {% if animal.vet.id == vet.id %} selected="selected"{% endif %}>
+                    {{vet.first_name }} {{ vet.last_name }}</option>
                 {% endfor %}
             </select>
         </div>
