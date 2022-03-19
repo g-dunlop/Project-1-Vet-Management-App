@@ -1,0 +1,38 @@
+
+
+button{
+    margin:0.5rem;
+    padding:0.5rem;
+    width:5rem;
+    background-color:rgb(194, 194, 243);
+    border:1px solid white;
+    border-radius:25px;
+}
+
+button:hover {
+    cursor:pointer;
+    background-color:rgb(128, 128, 196);
+}
+
+ .delete{
+    background-color:rgb(240, 145, 145);
+}
+
+.delete:hover{
+    background-color: red;
+}
+
+
+
+.button-container {
+    display:inline-flex;
+}
+
+.add-button{
+    margin:0.5rem;
+    padding:0.5rem;
+    width:7rem;
+    background-color:rgb(194, 194, 243);
+    border:1px solid white;
+    border-radius:25px;
+}

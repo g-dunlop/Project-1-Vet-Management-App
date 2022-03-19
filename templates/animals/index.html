@@ -2,24 +2,25 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Animals</h1>
 
+<div class="item-card-container">
 {% for animal in animals %}
-<p>Name: <a href="/animals/{{animal.id}}">{{animal.name}}</a></p>
-<p>D/o/B: {{animal.date_of_birth}}</p>
-<p>Type: {{animal.type}}</p>
-<p>Owner: {{animal.owner.full_name}}</p>
-<p>Vet: {{animal.vet.first_name}} {{animal.vet.last_name}}</p>
-<p>Treatment Notes:{{animal.treatment_notes}}</p>
+  <a href="/animals/{{animal.id}}"><div class="item-card">
+    <p><span class="bold">Name: </span> {{animal.name}}</p>
+    <p><span class="bold">D/o/B: </span> {{animal.date_of_birth}}</p>
+    <p><span class="bold">Type: </span> {{animal.type}}</p>
+  </div></a>
 
-<div>
+
+
 <!-- <form action="/animals/{{animal.id}}/delete" method="POST">
     <button>Delete</button>
   </form>
 </div> -->
 {% endfor %}
-
-<p><a href="animals/new">Add Animal</a></p>
+</div>
+<p class="link-container"><a class="add-link" href="animals/new">Add Animal</a></p>
    
 
 {% endblock %}

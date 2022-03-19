@@ -2,30 +2,50 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Owner</h1>
 
-<p>Name: {{owner.full_name}}</a></p>
-<p>Phone Number: {{owner.phone_number}}</p>
-<p>Email: {{owner.email_address}}</p>
-<p>Address: {{owner.address}}</p>
+<div class="item-card-container">
+  <div class="item-card-individual">
+    <p><span class="bold"> Name: </span>
+    {{owner.full_name}}</p>
+    <p><span class="bold"> Phone Number:</span>
+     {{owner.phone_number}}</p>
+    <p><span class="bold"> Email:</span>
+     {{owner.email_address}}</p>
+    <p><span class="bold"> Address:</span> {{owner.address}}</p>
 
-<div>
-    <form action="/owners/{{owner.id}}/edit" method="GET">
-      <button>Edit</button>
-    </form>
+  <div class="button-container">
+    <div>
+        <form action="/owners/{{owner.id}}/edit" method="GET">
+          <button>Edit</button>
+        </form>
+      </div>
+
+    <div>
+        <form action="/owners/{{owner.id}}/delete" method="POST">
+          <button class="delete">Delete</button>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 
-<div>
-    <form action="/owners/{{owner.id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
-  </div>
-
+<h2 class="sub-heading">Pets: </h2>
+<div class="items-container">
+  
+  
   {% for animal in animals %}
-    <a href="/animals/{{animal['id']}}">{{animal.name}} {{animal.id}}</a>
-    {{animal.date_of_birth}}
-    {{animal.type}}
+  <ul>
+    <a href="/animals/{{animal['id']}}">
+  <div class="item-card">
+    <li>{{animal.name}}</li>
+    <li>{{animal.date_of_birth}}</li>
+    <li>{{animal.type}}</li>
+  </div>
+</a>
+  </ul>
+  
   {% endfor %}
-
+</div>
 
 {% endblock %}

@@ -2,22 +2,22 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Edit Vet</h1>
 
-<form action="/vets/{{vet.id}}" method="post">
+<div class="form-container">
+    <form class="add-form" action="/vets/{{vet.id}}" method="post">
+        <div class="form-input"> 
+            <label for="first_name">First Name: </label>
+            <input type="text" id="first_name" name="first_name" value="{{vet.first_name}}"  required autofocus>
+        </div>
 
-    <div>
-        <label for="first_name">First Name: </label>
-        <input type="text" id="first_name" name="first_name" value="{{vet.first_name}}"  required autofocus>
-    </div>
+        <div class="form-input">
+            <label for="last_name">Second Name: </label>
+            <input type="text" id="last_name" name="last_name" value="{{vet.last_name}}" required>
+        </div>
 
-    <div>
-        <label for="last_name">Second Name: </label>
-        <input type="text" id="last_name" name="last_name" value="{{vet.last_name}}" required>
-    </div>
+        <button class="add-button" type="submit">Update</button>
 
-    <button type="submit">Update</button>
-
-</form>
-
+    </form>
+</div>
 {% endblock %}

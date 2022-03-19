@@ -47,11 +47,9 @@ def update(owner):
     run_sql(sql, values)
 
 
-def animals(owner):
-    
+def animals(owner): 
     animals = []
-
-    sql = "SELECT * FROM animals INNER JOIN owners ON animals.owner_id = owners.id WHERE owner_id = %s"
+    sql = "SELECT animals.* FROM animals INNER JOIN owners ON animals.owner_id = owners.id WHERE owner_id = %s"
     values = [owner.id]
     results = run_sql(sql, values)
     for row in results:

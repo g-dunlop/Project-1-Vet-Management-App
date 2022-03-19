@@ -32,7 +32,6 @@ def select(id):
     sql = "SELECT * FROM vets WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-
     if result is not None:
         vet = Vet(result['first_name'], result['last_name'], result['id'])
     return vet
@@ -49,10 +48,8 @@ def update(vet):
     run_sql(sql, values)
 
 def animals(vet):
-    
     animals = []
-
-    sql = "SELECT * FROM animals INNER JOIN vets ON animals.vet_id = vets.id WHERE vet_id = %s"
+    sql = "SELECT animals.* FROM animals INNER JOIN vets ON animals.vet_id = vets.id WHERE vet_id = %s"
     values = [vet.id]
     results = run_sql(sql, values)
     for row in results:

@@ -2,25 +2,32 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Animal</h1>
+<div class="item-card-container">
+  <div class="item-card-individual">
+    <p><span class="bold">Name:</span> {{animal.name}}</a></p>
+    <p><span class="bold">D/o/B:</span> {{animal.date_of_birth}}</p>
+    <p><span class="bold">Type: </span>{{animal.type}}</p>
+    <p><span class="bold">Owner:</span> {{animal.owner.full_name}} </p> 
+    <p><span class="bold">Phone: </span>{{animal.owner.phone_number}}</p> 
+    <p><span class="bold">Email:</span> {{animal.owner.email_address}}</p>
+    <p><span class="bold">Vet:</span> {{animal.vet.first_name}} {{animal.vet.last_name}}</p>
+    <p><span class="bold">Treatment Notes:</span>{{animal.treatment_notes}}</p>
 
-<p>Name: {{animal.name}}</a></p>
-<p>D/o/B: {{animal.date_of_birth}}</p>
-<p>Type: {{animal.type}}</p>
-<p>Owner: {{animal.owner.full_name}}</p>
-<p>Vet: {{animal.vet.first_name}} {{animal.vet.last_name}}</p>
-<p>Treatment Notes:{{animal.treatment_notes}}</p>
+  <div class="button-container">
+    <div>
+      <form action="/animals/{{animal.id}}/edit" method="GET">
+        <button>Edit</button>
+      </form>
+    </div>
 
-<div>
-  <form action="/animals/{{animal.id}}/edit" method="GET">
-    <button>Edit</button>
-  </form>
-</div>
-
-<div>
-<form action="/animals/{{animal.id}}/delete" method="POST">
-    <button>Delete</button>
-  </form>
+    <div>
+    <form action="/animals/{{animal.id}}/delete" method="POST">
+        <button class="delete">Delete</button>
+      </form>
+    </div>
+  </div>
+  </div>
 </div>
 
    

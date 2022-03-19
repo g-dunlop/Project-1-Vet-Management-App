@@ -2,30 +2,43 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Vet</h1>
+
+<div class="item-card-container">
+  <div class="item-card-individual">
+  <p><span class="bold">Name: </span>{{vet.first_name}} {{vet.last_name}}</p>
+
+  <div class="button-container">
+    <div>
+        <form action="/vets/{{vet.id}}/edit" method="GET">
+          <button>Edit</button>
+        </form>
+      </div>
 
 
-<p>Name: {{vet.first_name}} {{vet.last_name}}</p>
-
-<div>
-    <form action="/vets/{{vet.id}}/edit" method="GET">
-      <button>Edit</button>
-    </form>
+    <div>
+        <form action="/vets/{{vet.id}}/delete" method="POST">
+          <button class="delete">Delete</button>
+        </form>
+      </div>
+    </div>
   </div>
+</div>
 
-
-<div>
-    <form action="/vets/{{vet.id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
-  </div>
-
-<div>
-  <ul>
-  {% for animal in animals %}
-    <li><a href="/animals/{{animal['id']}}">{{animal.name}}</a></li>
-  {% endfor %}
-</ul>
+<h2 class="sub-heading">Animals:</h2>
+  <div class="items-container">
+    
+      
+      {% for animal in animals %}
+      <ul>
+      <a href="/animals/{{animal.id}}"><div class="item-card">
+        <li>{{animal.name}}</li>
+        <li>{{animal.date_of_birth}}</li>
+        <li>{{animal.type}}</li>
+        </div></a>
+      </ul>
+      {% endfor %}
+   
 </div>
 
 

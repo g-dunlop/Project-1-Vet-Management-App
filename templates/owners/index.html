@@ -2,13 +2,15 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Owners</h1>
 
+<div class="item-card-container">
 {% for owner in owners %}
-<p>Name: <a href="/owners/{{owner.id}}">{{owner.full_name}}</a></p>
-<p>Phone Number: {{owner.phone_number}}</p>
-<p>Email: {{owner.email_address}}</p>
-<p>Address: {{owner.address}}</p>
+
+  <a href="/owners/{{owner.id}}"><div class="item-card">
+    <p><span class="bold">Name:</span> {{owner.full_name}}</p>
+  </div></a>
+
 
 <!-- <div>
     <form action="/owners/{{owner.id}}/delete" method="POST">
@@ -17,7 +19,7 @@
   </div> -->
 
 {% endfor %}
-
-<p><a href="owners/new">Add Owner</a></p>
+</div>
+<p class="link-container"><a class="add-link" href="owners/new">Add Owner</a></p>
 
 {% endblock %}

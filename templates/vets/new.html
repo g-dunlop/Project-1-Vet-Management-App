@@ -2,22 +2,24 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
 
-<form action="/vets" method="post">
+<h1 class="page-title">Add New Vet</h1>
 
-    <div>
-        <label for="first_name">First Name: </label>
-        <input type="text" id="first_name" name="first_name" placeholder="First Name" required autofocus>
-    </div>
+<div class="form-container">
+    <form class="add-form"  action="/vets" method="post">
 
-    <div>
-        <label for="last_name">Second Name: </label>
-        <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
-    </div>
+        <div class="form-input">
+            <label for="first_name">First Name: </label>
+            <input type="text" id="first_name" name="first_name" placeholder="First Name" required autofocus>
+        </div>
 
-    <button type="submit">Add Vet</button>
+        <div class="form-input">
+            <label for="last_name">Second Name: </label>
+            <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+        </div>
 
-</form>
+        <button class="add-button" type="submit">Add Vet</button>
 
+    </form>
+</div>
 {% endblock %}

@@ -2,12 +2,17 @@
 
 {% block content %}
 
-<h1>Vet Management App</h1>
+<h1 class="page-title">Vets</h1>
 
+<div class="item-card-container">
 {% for vet in vets %}
-<p>Name: <a href="/vets/{{vet.id}}">{{vet.first_name}} {{vet.last_name}}</a></p>
 
-<div>
+
+  <a href="/vets/{{vet.id}}"><div class="item-card">
+    <p><span class="bold">Name: </span> {{vet.first_name}} {{vet.last_name}}</p>
+  
+  </div></a>
+
 
     <!-- <form action="/vets/{{vet.id}}/delete" method="POST">
       <button>Delete</button>
@@ -15,7 +20,7 @@
   </div> -->
 
 {% endfor %}
-
-<p><a href="vets/new">Add Vet</a></p>
+</div>
+<p class="link-container"><a class="add-link" href="vets/new">Add Vet</a></p>
 
 {% endblock %}

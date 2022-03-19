@@ -5,32 +5,41 @@
   <title>Vet Management App</title>
   <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet"> -->
   
-
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li>
-        <a href="/vets">Vets</a>
-      </li>
-      <li>
-        <a href="/owners">Owners</a>
-      </li>
-      <li>
-        <a href="/animals">Animals</a>
-      </li>
-    </ul>
-  </nav>
-
-  <section >
-      {% block content %}
-
-      {% endblock%}
-  </section>
+  <header>
+    <nav>
+      
+      <div class="logo">
+        
+        <a href="/"><h1> V.et</h1></a>
+      </div>
+      <ul>
+        <li>
+          <a href="/vets">Vets</a>
+        </li>
+        <li>
+          <a href="/owners">Owners</a>
+        </li>
+        <li>
+          <a href="/animals">Animals</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section >
+        {% block content %}
+      
+        {% endblock%}
+    </section>
   </main>
 </body>
 </html>

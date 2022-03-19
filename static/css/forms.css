@@ -1,0 +1,45 @@
+.form-container{
+    display:flex;
+    justify-content:center;
+}
+
+.add-form{
+    border: 1px solid white;
+    border-radius:5px;
+    padding:1rem;
+    font-family: "Arvo", serif;
+    margin:2rem;
+    text-align:center;
+    background-color:rgb(193, 224, 252);
+    color:rgb(10, 10, 95);
+}
+
+
+
+
+
+.form-input{
+    display:flex;
+    text-align:left;
+}
+
+.form-input > label {
+    width:150px;
+    font-weight:bold;
+    padding:0.5rem;
+}
+
+.form-input > input{
+    width:146px;
+    text-align:center;
+    color:rgb(10, 10, 95);
+    margin:0.2rem;
+}
+
+.form-input > select{
+    width:150px;
+    text-align:center;
+    color:rgb(10, 10, 95);
+    margin:0.2rem
+    
+}

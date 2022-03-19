@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    border:border-box;
+}
+
+body{
+    height: 100vh;
+    width:100%;
+    background-color:rgb(14, 126, 160);
+    
+}
+
+a{
+    text-decoration:none;
+    color:rgb(10, 10, 95);
+}
+
+nav{
+    display: inline-flex;
+    width:100%;
+    justify-content:space-between;
+    margin-bottom:2rem;
+    
+}
+
+nav > .logo  {
+    width:50%;
+    padding: 0;
+    font-family:"Arvo", serif;
+    font-size:2rem;
+    color:white;
+    text-shadow: 1px 1px #135f20;
+}
+
+nav > .logo > a{
+    text-decoration: none;
+    color:white;
+    text-shadow: 1px 1px #135f20;
+    padding: 0;
+    font-family:"Arvo", serif;
+    font-size:2rem;
+}
+
+nav > .logo > a:hover{
+    color:rgb(10, 10, 95);
+}
+
+nav > .logo > a > h1 {
+    padding-left:2rem;
+}
+
+nav > ul {
+    display: inline-flex;
+    list-style:none;
+    width:50%;
+    justify-content:center;
+    float:right;
+}
+
+nav > ul > li{
+    flex:33%;
+    text-align:center;
+    padding:1rem;
+    font-family:'Arvo', serif;
+    border-left: 2px dotted grey;
+}
+
+nav > ul > li:hover{
+    background-color:rgba(215, 223, 240, 0.329);
+}
+
+nav > ul > li > a{
+    text-decoration:none;
+    color:white;
+}
+
+.page-title {
+    color:white;
+    font-family:'Arvo', serif;
+    font-size:1.5rem;
+    text-align:center;
+}
+
+/* index.html */
+
+.banner-container{
+    display:flex;
+    background-image: url("../images/background.png");
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:75vh;
+    width:100%;
+    justify-content:center;
+    align-items:baseline;
+}
+
+.banner-contents{
+    font-family:'Arvo', serif;
+    color:white;
+    font-size:1rem;
+}
+
+
+/* index/show pages for vets animals owners */
+
+.item-card-container{
+    display:inline-flex;
+    flex-wrap: wrap;
+    padding:2rem;
+    width:95%;
+    justify-content:center;
+
+    
+}
+
+.item-card{
+    background-color:rgb(193, 224, 252);
+    padding:1rem;
+    border-radius:10px;
+    border:2px solid navy;
+    width:12rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(10, 10, 95);
+    margin: 2rem 2rem 2rem 2rem;
+   
+}
+
+.item-card > p{
+    padding:0.5rem;
+}
+
+.item-card-individual{
+    background-color:rgb(193, 224, 252);
+    padding:1rem;
+    border-radius:10px;
+    border:2px solid navy;
+    width:20rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(10, 10, 95);
+    margin: 2rem 2rem 2rem 2rem;
+}
+
+.item-card-individual > p{
+    padding:0.5rem;
+}
+
+.item-card:hover{
+    background-color:rgb(219, 219, 243);
+}
+
+.bold{
+    font-weight:bold;
+}
+
+.link-container{
+    display:flex;
+    justify-content:center;
+}
+
+.add-link{
+    background-color:rgb(130, 197, 130);
+    padding:0.5rem;
+    border-radius:25px;
+    width:10rem;
+    border: 1px solid white;
+    font-family: "arvo", serif;
+    text-align:center;
+}
+
+.add-link:hover{
+    background-color:rgb(27, 211, 27);
+    font-weight:bold;
+}
+
+/* show styles */
+
+.items-container{
+    display:flex;
+    justify-content:center;
+}
+
+.items-container > ul{
+    list-style:none;
+}
+
+.sub-heading{
+    text-align:center;
+    color:white;
+    font-family:"Arvo", serif;
+    margin-bottom:1rem;
+}
