@@ -47,3 +47,16 @@ def update(vet):
     sql = "UPDATE vets SET (first_name, last_name) = (%s, %s) WHERE id = %s"
     values = [vet.first_name, vet.last_name, vet.id]
     run_sql(sql, values)
+
+def animals(vet):
+    
+    animals = []
+
+    sql = "SELECT * FROM animals INNER JOIN vets ON animals.vet_id = vets.id WHERE vet_id = %s"
+    values = [vet.id]
+    results = run_sql(sql, values)
+    for row in results:
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
+        animals.append(animal)
+
+    return animals

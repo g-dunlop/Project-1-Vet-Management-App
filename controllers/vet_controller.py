@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.vet import Vet
+from models.animal import Animal
 import repositories.vet_repository as vet_repository
 
 vets_blueprint = Blueprint("vets", __name__)
@@ -30,7 +31,8 @@ def delete_vet(id):
 @vets_blueprint.route("/vets/<id>")
 def show_vet(id):
     vet = vet_repository.select(id)
-    return render_template('vets/show.html', vet = vet)
+    animals = vet_repository.animals(vet)
+    return render_template('vets/show.html', vet = vet, animals = animals)
 
 @vets_blueprint.route("/vets/<id>/edit", methods=['GET'])
 def edit_vet(id):

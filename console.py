@@ -35,7 +35,7 @@ animal1 = Animal("Tony", "11/11/2017", "cat", owner1, vet1, [])
 animal_repository.save(animal1)
 # pdb.set_trace()
 # animal1.name = "Toni"
-# # pdb.set_trace()
+
 # animal_repository.update(animal1)
 
 animal2 = Animal("Collin", "15/12/2018", "cat", owner2, vet1, ["17/02/2020", "Martina", "Diarrhea", "antibiotics"])
@@ -65,3 +65,4 @@ animal_repository.save(animal2)
 # animal_repository.delete(11)
 # vet_repository.delete(12)
 # owner_repository.delete(11)
+

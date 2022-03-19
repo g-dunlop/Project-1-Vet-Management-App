@@ -16,11 +16,11 @@ def new_owner():
 
 @owners_blueprint.route("/owners", methods=['POST'])
 def create_vet():
-    name = request.form['name']
+    full_name = request.form['full_name']
     phone_number = request.form['phone_number']
     email_address = request.form['email_address']
     address = request.form['address']
-    owner = Owner(name, phone_number, email_address, address)
+    owner = Owner(full_name, phone_number, email_address, address)
     owner_repository.save(owner)
     return redirect('/owners')
 
@@ -33,7 +33,8 @@ def delete_owner(id):
 @owners_blueprint.route("/owners/<id>")
 def show_owner(id):
     owner = owner_repository.select(id)
-    return render_template('owners/show.html', owner = owner)
+    animals = owner_repository.animals(owner)
+    return render_template('owners/show.html', owner = owner, animals = animals)
 
 @owners_blueprint.route("/owners/<id>/edit")
 def edit_owner(id):
@@ -42,10 +43,10 @@ def edit_owner(id):
 
 @owners_blueprint.route("/owners/<id>", methods = ['POST'])
 def update_owners(id):
-    name = request.form['name']
+    full_name = request.form['full_name']
     phone_number = request.form['phone_number']
     email_address = request.form['email_address']
     address = request.form['address']
-    owner = Owner(name, phone_number, email_address, address, id)
+    owner = Owner(full_name, phone_number, email_address, address, id)
     owner_repository.update(owner)
     return redirect('/owners')

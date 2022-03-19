@@ -5,7 +5,7 @@
 <h1>Vet Management App</h1>
 
 {% for owner in owners %}
-<p>Name: <a href="/owners/{{owner.id}}">{{owner.name}}</a></p>
+<p>Name: <a href="/owners/{{owner.id}}">{{owner.full_name}}</a></p>
 <p>Phone Number: {{owner.phone_number}}</p>
 <p>Email: {{owner.email_address}}</p>
 <p>Address: {{owner.address}}</p>

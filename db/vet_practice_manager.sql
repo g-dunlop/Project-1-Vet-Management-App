@@ -10,7 +10,7 @@ CREATE TABLE vets (
 
 CREATE TABLE owners (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    full_name VARCHAR(255),
     phone_number VARCHAR(255),
     email_address VARCHAR(255),
     address VARCHAR(255)
@@ -25,3 +25,7 @@ CREATE TABLE animals (
     vet_id INT REFERENCES vets(id) ON DELETE CASCADE,
     treatment_notes VARCHAR(255)
 );
+
+-- SELECT * FROM animals INNER JOIN vets ON animals.vet_id = vets.id;
+
+-- SELECT * FROM animals INNER JOIN owners ON animals.owner_id = owners.id;
