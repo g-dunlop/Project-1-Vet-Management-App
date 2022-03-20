@@ -53,3 +53,17 @@ def select(id):
         vet = vet_repository.select(result['vet_id'])
         animal = Animal(result['name'], result['date_of_birth'], result['type'], owner, vet, result['treatment_notes'], result['id'])
     return animal
+
+
+def select_by_name(name):
+    result = None
+    sql = "SELECT * FROM animals WHERE name LIKE %s"
+    values = [name]
+    result = run_sql(sql, values)[0]
+    
+    if result is not None:
+        vet = vet_repository.select(result['vet_id'])
+        owner = owner_repository.select(result['owner_id'])        
+        animal = Animal(result['name'], result['date_of_birth'], result['type'], owner, vet, result['treatment_notes'], result['id'])
+
+    return animal

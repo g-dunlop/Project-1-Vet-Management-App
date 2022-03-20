@@ -29,3 +29,4 @@ CREATE TABLE animals (
 -- SELECT * FROM animals INNER JOIN vets ON animals.vet_id = vets.id;
 
 -- SELECT * FROM animals INNER JOIN owners ON animals.owner_id = owners.id;
+

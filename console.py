@@ -66,3 +66,11 @@ animal_repository.save(animal2)
 # vet_repository.delete(12)
 # owner_repository.delete(11)
 
+vet = vet_repository.select_by_name('James')
+print(vet.__dict__)
+
+owner=owner_repository.select_by_name('Laurie')
+print(owner.__dict__)
+
+animal=animal_repository.select_by_name('Collin')
+print(animal.__dict__)

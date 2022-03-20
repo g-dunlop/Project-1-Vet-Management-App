@@ -56,3 +56,13 @@ def animals(owner):
         animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
         animals.append(animal)
     return animals
+
+def select_by_name(name):
+    result=None
+    sql = "SELECT * FROM owners WHERE full_name LIKE %s"
+    values = [name]
+    result = run_sql(sql, values)[0]
+    
+    if result is not None:
+        owner = Owner(result['full_name'], result['phone_number'], result['email_address'], result['address'], result['id'])
+    return owner

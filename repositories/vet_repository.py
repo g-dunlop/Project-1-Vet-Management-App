@@ -1,3 +1,4 @@
+import pdb
 from db.run_sql import run_sql
 
 from models.vet import Vet
@@ -57,3 +58,15 @@ def animals(vet):
         animals.append(animal)
 
     return animals
+
+def select_by_name(name):
+    result=None
+    sql = "SELECT * FROM vets WHERE first_name = %s"
+    values = [name]
+    result = run_sql(sql, values)[0]
+    
+    if result is not None:
+        vet = Vet(result['first_name'], result['last_name'], result['id'])
+    return vet
+
+    
