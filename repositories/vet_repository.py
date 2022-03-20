@@ -60,13 +60,14 @@ def animals(vet):
     return animals
 
 def select_by_name(name):
-    result=None
+    vets = []
     sql = "SELECT * FROM vets WHERE first_name = %s"
     values = [name]
-    result = run_sql(sql, values)[0]
+    results = run_sql(sql, values)
     
-    if result is not None:
-        vet = Vet(result['first_name'], result['last_name'], result['id'])
-    return vet
+    for row in results:
+        vet = Vet(row['first_name'], row['last_name'], row['id'])
+        vets.append(vet)
+    return vets
 
     

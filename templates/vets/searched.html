@@ -4,11 +4,6 @@
 
 <h1 class="page-title">Vets</h1>
 
-<form class="form-inline my-2 my-lg-0" method="GET">
-  <input class="form-control mr-sm-2"
-    type="search" placeholder="Search" name="searched">
-  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form>
 
 <div class="item-card-container">
 {% for vet in vets %}
@@ -27,6 +22,6 @@
 
 {% endfor %}
 </div>
-<p class="link-container"><a class="add-link" href="vets/new">Add Vet</a></p>
+
 
 {% endblock %}
