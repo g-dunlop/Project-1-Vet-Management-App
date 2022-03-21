@@ -110,15 +110,13 @@ nav > ul > li > a{
     flex-wrap: wrap;
     padding:2rem;
     width:95%;
-    justify-content:center;
-
-    
+    justify-content:center; 
 }
 
 .item-card{
     background-color:rgb(193, 224, 252);
     padding:1rem;
-    border-radius:10px;
+    border-radius:5px;
     border:2px solid navy;
     width:12rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -134,7 +132,7 @@ nav > ul > li > a{
 .item-card-individual{
     background-color:rgb(193, 224, 252);
     padding:1rem;
-    border-radius:10px;
+    border-radius:5px;
     border:2px solid navy;
     width:20rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

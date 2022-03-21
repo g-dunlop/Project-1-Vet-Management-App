@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Results:</h1>
+
+
+<div class="item-card-container">
+{% for animal in animals %}
+
+  <a href="/animals/{{animal.id}}"><div class="item-card">
+    <p><span class="bold">Name: </span> {{animal.name}}</p>
+  
+  </div></a>
+
+
+
+{% endfor %}
+</div>
+
+
+{% endblock %}

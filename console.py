@@ -13,10 +13,10 @@ animal_repository.delete_all()
 vet_repository.delete_all()
 owner_repository.delete_all()
 
-vet1 = Vet('Martina', 'Simplowicz')
+vet1 = Vet('Martina Simplowicz')
 vet_repository.save(vet1)
 
-vet2 = Vet('James', 'Herriot')
+vet2 = Vet('James Herriot')
 vet_repository.save(vet2)
 
 # vet1.first_name = 'Bob'
@@ -66,11 +66,11 @@ animal_repository.save(animal2)
 # vet_repository.delete(12)
 # owner_repository.delete(11)
 
-vet = vet_repository.select_by_name('James')
-print(vet.__dict__)
+# vet = vet_repository.select_by_name('James')
+# print(vet.__dict__)
 
-owner=owner_repository.select_by_name('Laurie')
-print(owner.__dict__)
+# owner=owner_repository.select_by_name('Laurie')
+# print(owner.__dict__)
 
-animal=animal_repository.select_by_name('Collin')
-print(animal.__dict__)
+# animal=animal_repository.select_by_name('Collin')
+# print(animal.__dict__)

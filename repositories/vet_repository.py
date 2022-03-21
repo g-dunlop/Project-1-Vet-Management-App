@@ -5,8 +5,8 @@ from models.vet import Vet
 from models.animal import Animal
 
 def save(vet):
-    sql = "INSERT INTO vets(first_name, last_name) VALUES (%s, %s) RETURNING *"
-    values = [vet.first_name, vet.last_name]
+    sql = "INSERT INTO vets(full_name) VALUES (%s) RETURNING *"
+    values = [vet.full_name]
     results = run_sql(sql, values)
     vet.id = results[0]['id']
     return vet
@@ -24,7 +24,7 @@ def select_all():
     sql = "SELECT * FROM vets"
     results = run_sql(sql)
     for row in results:
-        vet = Vet(row['first_name'], row['last_name'], row['id'])
+        vet = Vet(row['full_name'], row['id'])
         vets.append(vet)
     return vets
 
@@ -34,7 +34,7 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        vet = Vet(result['first_name'], result['last_name'], result['id'])
+        vet = Vet(result['full_name'], result['id'])
     return vet
 
 def delete(id):
@@ -44,8 +44,8 @@ def delete(id):
 
 
 def update(vet):
-    sql = "UPDATE vets SET (first_name, last_name) = (%s, %s) WHERE id = %s"
-    values = [vet.first_name, vet.last_name, vet.id]
+    sql = "UPDATE vets SET (full_name) = (%s) WHERE id = %s"
+    values = [vet.full_name, vet.id]
     run_sql(sql, values)
 
 def animals(vet):
@@ -61,12 +61,12 @@ def animals(vet):
 
 def select_by_name(name):
     vets = []
-    sql = "SELECT * FROM vets WHERE first_name LIKE %s"
+    sql = "SELECT * FROM vets WHERE full_name LIKE %s"
     values = ['%' + name + '%']
     results = run_sql(sql, values)
     
     for row in results:
-        vet = Vet(row['first_name'], row['last_name'], row['id'])
+        vet = Vet(row['full_name'], row['id'])
         vets.append(vet)
     return vets
 

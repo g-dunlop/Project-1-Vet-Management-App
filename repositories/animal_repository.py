@@ -56,14 +56,15 @@ def select(id):
 
 
 def select_by_name(name):
-    result = None
+    animals = []
     sql = "SELECT * FROM animals WHERE name LIKE %s"
-    values = [name]
-    result = run_sql(sql, values)[0]
+    values = ['%' + name + '%']
+    results = run_sql(sql, values)
     
-    if result is not None:
-        vet = vet_repository.select(result['vet_id'])
-        owner = owner_repository.select(result['owner_id'])        
-        animal = Animal(result['name'], result['date_of_birth'], result['type'], owner, vet, result['treatment_notes'], result['id'])
+    for row in results:
+        owner = owner_repository.select(row['owner_id'])
+        vet = vet_repository.select(row['vet_id'])
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], owner, vet, row['treatment_notes'], row['id'])
+        animals.append(animal)
 
-    return animal
+    return animals

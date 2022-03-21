@@ -8,6 +8,13 @@ owners_blueprint = Blueprint("owners", __name__)
 @owners_blueprint.route("/owners")
 def owners():
     owners = owner_repository.select_all()
+    searched = request.args.get('searched') 
+    if searched:
+        searched = searched.capitalize()
+        owners = owner_repository.select_by_name(searched)
+        return render_template("owners/searched.html", owners=owners)
+    else:
+        owners = owner_repository.select_all()
     return render_template("owners/index.html", owners = owners)
 
 @owners_blueprint.route("/owners/new", methods=['GET'])
@@ -15,12 +22,13 @@ def new_owner():
     return render_template("owners/new.html")
 
 @owners_blueprint.route("/owners", methods=['POST'])
-def create_vet():
+def create_owner():
     full_name = request.form['full_name']
     phone_number = request.form['phone_number']
     email_address = request.form['email_address']
     address = request.form['address']
-    owner = Owner(full_name, phone_number, email_address, address)
+    registered = True
+    owner = Owner(full_name, phone_number, email_address, address, registered)
     owner_repository.save(owner)
     return redirect('/owners')
 
@@ -47,6 +55,7 @@ def update_owners(id):
     phone_number = request.form['phone_number']
     email_address = request.form['email_address']
     address = request.form['address']
-    owner = Owner(full_name, phone_number, email_address, address, id)
+    registered = request.form['registered']
+    owner = Owner(full_name, phone_number, email_address, address, registered, id)
     owner_repository.update(owner)
     return redirect('/owners')

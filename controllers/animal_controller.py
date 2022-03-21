@@ -11,6 +11,13 @@ animals_blueprint = Blueprint("animals", __name__)
 def animals():
     
     animals = animal_repository.select_all()
+    searched = request.args.get('searched')
+    if searched:
+        searched = searched.capitalize()
+        animals = animal_repository.select_by_name(searched)
+        return render_template("animals/searched.html", animals=animals)
+    else:
+        animals = animal_repository.select_all()
     
     return render_template("animals/index.html", animals = animals)
 

@@ -47,7 +47,7 @@
                 {% for vet in all_vets %}
                 <option value="{{ vet.id }}"
                     {% if animal.vet.id == vet.id %} selected="selected"{% endif %}>
-                    {{vet.first_name }} {{ vet.last_name }}</option>
+                    {{vet.full_name }}</option>
                 {% endfor %}
             </select>
         </div>

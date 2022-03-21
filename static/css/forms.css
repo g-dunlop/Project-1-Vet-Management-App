@@ -14,10 +14,6 @@
     color:rgb(10, 10, 95);
 }
 
-
-
-
-
 .form-input{
     display:flex;
     text-align:left;
@@ -42,4 +38,9 @@
     color:rgb(10, 10, 95);
     margin:0.2rem
     
+}
+
+.form-inline > .form-control{
+    padding:0.5rem;
+    border-radius:5px;
 }

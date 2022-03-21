@@ -4,8 +4,8 @@ DROP TABLE vets;
 
 CREATE TABLE vets (
     id SERIAL PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255)
+    full_name VARCHAR(255)
+    
 );
 
 CREATE TABLE owners (
@@ -13,7 +13,8 @@ CREATE TABLE owners (
     full_name VARCHAR(255),
     phone_number VARCHAR(255),
     email_address VARCHAR(255),
-    address VARCHAR(255)
+    address VARCHAR(255),
+    registered BOOLEAN
 );
 
 CREATE TABLE animals (

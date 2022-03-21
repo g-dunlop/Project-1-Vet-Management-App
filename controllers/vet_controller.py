@@ -12,8 +12,10 @@ def vets():
 
     vets = vet_repository.select_all()
     searched = request.args.get('searched')
+    
     print(searched)
     if searched:
+        searched = searched.capitalize()
         vets = vet_repository.select_by_name(searched)
         return render_template("vets/searched.html", vets=vets)
     else:
@@ -26,9 +28,8 @@ def new_vet():
 
 @vets_blueprint.route("/vets", methods=['POST'])
 def create_vet():
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
-    vet = Vet(first_name, last_name)
+    full_name = request.form['full_name']
+    vet = Vet(full_name)
     vet_repository.save(vet)
     return redirect('/vets')
 
@@ -50,8 +51,7 @@ def edit_vet(id):
 
 @vets_blueprint.route("/vets/<id>", methods = ['POST'])
 def update_vet(id):
-    first_name = request.form['first_name']
-    last_name = request.form['last_name']
-    vet = Vet(first_name, last_name, id)
+    full_name = request.form['full_name']
+    vet = Vet(full_name, id)
     vet_repository.update(vet)
     return redirect("/vets")
