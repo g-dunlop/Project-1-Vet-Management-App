@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Appointments</h1>
+
+<div class="item-card-container">
+{% for appointment in appointments %}
+  <a href="/appointments/{{appointment.id}}"><div class="item-card">
+    <p><span class="bold">Date: </span> {{appointment.appointment_date}}</p>
+    <p><span class="bold">Time: </span> {{appointment.appointment_time}}</p>
+    <p><span class="bold">Pet: </span> {{appointment.animal.name}}</p>
+    <p><span class="bold">Vet: </span> {{appointment.animal.vet.full_name}}</p>
+  </div></a>
+
+
+
+
+{% endfor %}
+</div>
+<p class="link-container"><a class="add-link" href="appointments/new">Add Appointment</a></p>
+   
+
+{% endblock %}

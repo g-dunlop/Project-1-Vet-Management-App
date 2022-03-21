@@ -5,11 +5,13 @@ from models.animal import Animal
 from models.owner import Owner
 from models.vet import Vet
 from models.treatment import Treatment
+from models.appointment import Appointment
 
 import repositories.vet_repository as vet_repository
 import repositories.owner_repository as owner_repository
 import repositories.animal_repository as animal_repository
 import repositories.treatment_repository as treatment_repository
+import repositories.appointment_repository as appointment_repository
 
 animal_repository.delete_all()
 vet_repository.delete_all()
@@ -99,3 +101,20 @@ treatment_repository.save(treatment2)
 treatments = treatment_repository.select_by_name("Vet consult")
 for treatment in treatments:
     print(treatment.__dict__)
+
+appointment1 = Appointment(animal1, '2022-08-21', '15:00', 'He is acting like a person', treatment1)
+appointment_repository.save(appointment1)
+
+appointments = appointment_repository.select_all()
+for appointment in appointments:
+    print(appointment.__dict__)
+
+appointment1.reason = "She is acting like a person"
+appointment_repository.update(appointment1)
+
+# appointment = appointment_repository.select(7)
+# print(appointment.__dict__)
+
+# appointments = appointment_repository.select_by_date("21")
+# for appointment in appointments:
+#     print(appointment.__dict__)
