@@ -22,10 +22,10 @@ class AnimalTest(unittest.TestCase):
         self.assertEqual("cat", self.animal1.type)
 
     def test_animal_owner_has_name(self):
-        self.assertEqual("Laurie", self.animal1.owner.name)
+        self.assertEqual("Laurie", self.animal1.owner.full_name)
 
     def test_animal_has_vet(self):
-        self.assertEqual("Martina", self.animal1.vet.name)
+        self.assertEqual("Martina", self.animal1.vet.full_name)
 
     def test_animal_has_clear_treament_notes(self):
         self.assertEqual("Martina", self.animal1.treatment_notes[0]["vet"])

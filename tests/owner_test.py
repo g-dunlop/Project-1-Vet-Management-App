@@ -9,7 +9,7 @@ class OwnerTest(unittest.TestCase):
     
     
     def test_owner_has_name(self):
-        self.assertEqual("Laurie", self.owner1.name)
+        self.assertEqual("Laurie", self.owner1.full_name)
 
     def test_owner_has_phone_number(self):
         self.assertEqual("08564489732", self.owner1.phone_number)

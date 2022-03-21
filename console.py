@@ -4,14 +4,17 @@ import pdb
 from models.animal import Animal
 from models.owner import Owner
 from models.vet import Vet
+from models.treatment import Treatment
 
 import repositories.vet_repository as vet_repository
 import repositories.owner_repository as owner_repository
 import repositories.animal_repository as animal_repository
+import repositories.treatment_repository as treatment_repository
 
 animal_repository.delete_all()
 vet_repository.delete_all()
 owner_repository.delete_all()
+treatment_repository.delete_all()
 
 vet1 = Vet('Martina Simplowicz')
 vet_repository.save(vet1)
@@ -74,3 +77,25 @@ animal_repository.save(animal2)
 
 # animal=animal_repository.select_by_name('Collin')
 # print(animal.__dict__)
+
+treatment1 = Treatment("Vet consult", 15.25)
+treatment_repository.save(treatment1)
+
+treatment2 = Treatment("Rabies Vaccination", 80.00)
+treatment_repository.save(treatment2)
+
+# treatments = treatment_repository.select_all()
+# for treatment in treatments:
+#     print(treatment.__dict__)
+
+# treatment = treatment_repository.select(9)
+# print(treatment.__dict__)
+
+# treatment_repository.delete(11)
+
+# treatment1.price = 15.00
+# treatment_repository.update(treatment1)
+
+treatments = treatment_repository.select_by_name("Vet consult")
+for treatment in treatments:
+    print(treatment.__dict__)

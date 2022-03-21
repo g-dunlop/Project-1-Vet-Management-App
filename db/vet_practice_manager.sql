@@ -1,3 +1,5 @@
+DROP TABLE treatments;
+-- DROP TABLE appointments;
 DROP TABLE animals;
 DROP TABLE owners;
 DROP TABLE vets;
@@ -26,6 +28,12 @@ CREATE TABLE animals (
     vet_id INT REFERENCES vets(id) ON DELETE CASCADE,
     treatment_notes VARCHAR(255)
 );
+
+CREATE TABLE treatments (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(255),
+    price FLOAT
+)
 
 -- SELECT * FROM animals INNER JOIN vets ON animals.vet_id = vets.id;
 
