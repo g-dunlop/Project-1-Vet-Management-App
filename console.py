@@ -86,6 +86,9 @@ treatment_repository.save(treatment1)
 treatment2 = Treatment("Rabies Vaccination", 80.00)
 treatment_repository.save(treatment2)
 
+treatment3 = Treatment("None", 0.00)
+treatment_repository.save(treatment3)
+
 # treatments = treatment_repository.select_all()
 # for treatment in treatments:
 #     print(treatment.__dict__)

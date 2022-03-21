@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Add New Appointment</h1>
+
+
+<div class="form-container">
+    <form class="add-form" action="/appointments" method="post">
+
+        <div class="form-input">
+            <label for="animal">Pet Name:</label>
+            <select id="animal" name="animal_id">
+            {% for animal in all_animals %}
+                {%if animal.owner.registered == True%}
+                    <option value="{{ animal.id }}">{{animal.name}}</option>
+                {%endif%}
+            {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-input">
+            <label for="appointment_date">Date: </label>
+            <input type="date" id="appointment_date" name="appointment_date" placeholder="Appointment Date" required>
+        </div>
+
+        <div class="form-input">
+            <label for="appointment_time">Time: </label>
+            <select id="appointment-_ime" name="appointment_time" required>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+        </div>
+
+
+        <!-- <div class="form-input">
+            <label for="owner">Owner:</label>
+            <select id="owner" name="owner_id">
+            
+            {% for animal in all_animals %}
+            
+                    <option value="{{ animal.owner.id }}" {% if animal.owner.id == animal.owner.id %} selected="selected"{% endif %}>{{animal.owner.full_name}}</option>
+            {% endfor %}
+            </select>
+        </div> -->
+
+        <div class="form-input">
+            <label for="reason">Reason for Visit: </label>
+            <input type="text" id="reason" name="reason" placeholder="Reason for Visit">
+        </div>
+       
+        <div class="form-input">
+            <label for="treatment">Treatments: </label>
+            <select id="treatment" name="treatment_id" required>
+                    
+                {% for treatment in all_treatments %}
+                    <option value="{{ treatment.id }}">{{treatment.description }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="add-button" type="submit">Add animal</button>
+
+    </form>
+</div>
+{% endblock %}

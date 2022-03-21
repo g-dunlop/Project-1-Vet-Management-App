@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Edit Appointment</h1>
+
+<div class="form-container">
+    <form class="add-form" action="/appointments/{{appointment.id}}" method="post">
+        <div class="form-input">
+            <label for="animal">Pet Name:</label>
+            <select id="animal" name="animal_id">
+            {% for animal in all_animals %}
+                {%if animal.owner.registered == True%}
+                    <option value="{{ animal.id }}" {% if appointment.animal.name == animal.name %} selected="selected"{% endif %}>{{animal.name}}</option>
+                {%endif%}
+            {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-input">
+            <label for="appointment_date">Date: </label>
+            <input type="date" id="appointment_date" name="appointment_date" value="{{appointment.appointment_date}}" required>
+        </div>
+
+        <div class="form-input">
+            <label for="appointment_time">Time: </label>
+            <select id="appointment-time" name="appointment_time" required>
+                <option value="09:00" {% if appointment.appointment_time == "09:00:00" %} selected = "selected"{% endif %}>09:00</option>
+                <option value="10:00" {% if appointment.appointment_time == "10:00" %} selected = "selected"{% endif %}>10:00</option>
+                <option value="11:00" {% if appointment.appointment_time == "11:00" %} selected = "selected"{% endif %}>11:00</option>
+                <option value="12:00" {% if appointment.appointment_time == "12:00:00" %} selected = "selected"{% endif %}>12:00</option>
+                <option value="14:00" {% if appointment.appointment_time == "14:00" %} selected = "selected"{% endif %}>14:00</option>
+                <option value="15:00" {% if appointment.appointment_time == "15:00" %} selected = "selected"{% endif %}>15:00</option>
+                <option value="16:00" {% if appointment.appointment_time == "16:00" %} selected = "selected"{% endif %}>16:00</option>
+            </select>
+        </div>
+
+        <div class="form-input">
+            <label for="reason">Reason for Visit: </label>
+            <input type="text" id="reason" name="reason" Value="{{appointment.reason}}">
+        </div>
+       
+        <div class="form-input">
+            <label for="treatment">Treatments: </label>
+            <select id="treatment" name="treatment_id" required>
+                    
+                {% for treatment in all_treatments %}
+                    <option value="{{ treatment.id }}" {% if appointment.treatment.id == treatment.id %} selected="selected" {%endif%}>{{treatment.description }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="add-button" type="submit">Update animal</button>
+
+    </form>
+</div>
+{% endblock %}

@@ -28,7 +28,7 @@
                 <option value="parrot">Parrot</option>
                 <option value="cow">Cow</option>
                 <option value="pig">Pig</option>
-                <option value="horse">Horse</optopm>
+                <option value="horse">Horse</option>
             </select>
         </div>
 
@@ -38,7 +38,7 @@
             {% for owner in all_owners %}
                 {%if owner.registered == True%}
                     <option value="{{ owner.id }}">{{owner.full_name }}</option>
-                {%endif%}
+                {%endif%} 
             {% endfor %}
             </select>
         </div>

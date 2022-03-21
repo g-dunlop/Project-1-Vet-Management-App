@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Appointment</h1>
+<div class="item-card-container">
+  <div class="item-card-individual">
+    <p><span class="bold">Pet Name:</span> {{appointment.animal.name}}</a></p>
+    <p><span class="bold">Date:</span> {{appointment.appointment_date}}</p>
+    <p><span class="bold">Time: </span>{{appointment.appointment_time}}</p>
+    <p><span class="bold">Reason:</span> {{appointment.reason}} </p> 
+    <p><span class="bold">Treatment: </span>{{appointment.treatment.description}}:  £{{appointment.treatment.price}}</p> 
+
+  <div class="button-container">
+
+    
+    <div>
+      <form action="/appointments/{{appointment.id}}/edit" method="GET">
+        <button>Edit</button>
+      </form>
+    </div>
+
+    <div>
+    <form action="/appointments/{{appointment.id}}/delete" method="POST">
+        <button class="delete">Delete</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
+
+   
+
+{% endblock %}
