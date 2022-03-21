@@ -1,5 +1,5 @@
 from db.run_sql import run_sql
-
+from datetime import datetime
 from models.animal import Animal
 from models.owner import Owner
 from models.vet import Vet
@@ -28,6 +28,8 @@ def select_all():
         owner = owner_repository.select(row['owner_id'])
         vet = vet_repository.select(row['vet_id'])
         animal = Animal(row['name'], row['date_of_birth'], row['type'], owner, vet, row['treatment_notes'], row['id'])
+        animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
+        animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
         animals.append(animal)
     return(animals)
 
@@ -52,6 +54,8 @@ def select(id):
         owner = owner_repository.select(result['owner_id'])
         vet = vet_repository.select(result['vet_id'])
         animal = Animal(result['name'], result['date_of_birth'], result['type'], owner, vet, result['treatment_notes'], result['id'])
+        animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
+        animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
     return animal
 
 
@@ -65,6 +69,7 @@ def select_by_name(name):
         owner = owner_repository.select(row['owner_id'])
         vet = vet_repository.select(row['vet_id'])
         animal = Animal(row['name'], row['date_of_birth'], row['type'], owner, vet, row['treatment_notes'], row['id'])
+        
         animals.append(animal)
 
     return animals

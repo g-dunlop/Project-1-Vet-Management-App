@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class Animal:
     def __init__(self, name, date_of_birth, type, owner, vet, treatment_notes, id=None):
         self.name = name
@@ -7,3 +9,7 @@ class Animal:
         self.vet = vet
         self.treatment_notes = treatment_notes
         self.id = id
+
+        
+
+        

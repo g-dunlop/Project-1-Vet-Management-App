@@ -34,14 +34,14 @@ owner_repository.save(owner2)
 # owner2.phone_number = "099999999999"
 # owner_repository.update(owner2)
 
-animal1 = Animal("Tony", "11/11/2017", "cat", owner1, vet1, [])
+animal1 = Animal("Tony", "2017-11-11", "cat", owner1, vet1, [])
 animal_repository.save(animal1)
 # pdb.set_trace()
 # animal1.name = "Toni"
 
 # animal_repository.update(animal1)
 
-animal2 = Animal("Collin", "15/12/2018", "cat", owner2, vet1, ["17/02/2020", "Martina", "Diarrhea", "antibiotics"])
+animal2 = Animal("Collin", "2018-12-15", "cat", owner2, vet1, ["17/02/2020", "Martina", "Diarrhea", "antibiotics"])
 animal_repository.save(animal2)
 
 # animal2.name = "Colin"
