@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Edit Treatment</h1>
+
+<div class="form-container">
+    <form class="add-form" action="/treatments/{{treatment.id}}" method="post">
+      
+
+        <div class="form-input">
+            <label for="description">Description: </label>
+            <input type="text" id="description" name="description" value="{{treatment.description}}" required autofocus>
+        </div>
+
+        <div class="form-input">
+            <label for="price">Price: </label>
+            <input type="text" id="price" name="price" value="{{treatment.price}}" required autofocus>
+        </div>
+
+
+        <button class="add-button" type="submit">Update</button>
+
+    </form>
+</div>
+{% endblock %}

@@ -18,7 +18,7 @@ def select_all():
     sql = "SELECT * FROM treatments"
     results = run_sql(sql)
     for row in results:
-        treatment = Treatment(row['description'], row['price'])
+        treatment = Treatment(row['description'], row['price'], row['id'])
         treatments.append(treatment)
     return treatments
 
@@ -37,10 +37,10 @@ def delete(id):
     sql = "DELETE FROM treatments WHERE id = %s"
     values = [id]
     run_sql(sql, values)
-
+ 
 def update(treatment):
     sql = "UPDATE treatments SET (description, price) = (%s, %s) WHERE id = %s"
-    values = [treatment.description, treatment.price,  treatment.id]
+    values = [treatment.description, treatment.price, treatment.id]
     print(values)
     run_sql(sql, values)
 

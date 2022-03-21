@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Treatment</h1>
+
+<div class="item-card-container">
+  <div class="item-card-individual">
+    <p><span class="bold">Treatment: </span> {{treatment.description}}</p>
+    <p><span class="bold">Price: </span> {{treatment.price}}</p>
+
+  <div class="button-container">
+    <div>
+        <form action="/treatments/{{treatment.id}}/edit" method="GET">
+          <button>Edit</button>
+        </form>
+      </div>
+
+
+    <div>
+        <form action="/treatments/{{treatment.id}}/delete" method="POST">
+          <button class="delete">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

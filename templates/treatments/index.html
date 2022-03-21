@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="page-title">Treatments</h1>
+
+<div class="form-container">
+  <form class="form-inline my-2 my-lg-0" method="GET">
+    <input class="form-control mr-sm-2"
+      type="search" placeholder="Search" name="searched">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="item-card-container">
+{% for treatment in treatments %}
+
+
+<a href="/treatments/{{treatment.id}}"><div class="item-card">
+    <p><span class="bold">Treatment: </span> {{treatment.description}}</p>
+    <p><span class="bold">Price: </span> {{treatment.price}}</p>
+        </div></a>
+
+    {% endfor %}
+  </div>
+  
+
+
+   
+
+
+
+<p class="link-container"><a class="add-link" href="treatments/new">Add Treatment</a></p>
+
+{% endblock %}
