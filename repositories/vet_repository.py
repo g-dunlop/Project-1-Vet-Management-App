@@ -61,8 +61,8 @@ def animals(vet):
 
 def select_by_name(name):
     vets = []
-    sql = "SELECT * FROM vets WHERE first_name = %s"
-    values = [name]
+    sql = "SELECT * FROM vets WHERE first_name LIKE %s"
+    values = ['%' + name + '%']
     results = run_sql(sql, values)
     
     for row in results:

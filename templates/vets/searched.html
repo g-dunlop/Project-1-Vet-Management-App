@@ -2,12 +2,11 @@
 
 {% block content %}
 
-<h1 class="page-title">Vets</h1>
+<h1 class="page-title">Results:</h1>
 
 
 <div class="item-card-container">
 {% for vet in vets %}
-
 
   <a href="/vets/{{vet.id}}"><div class="item-card">
     <p><span class="bold">Name: </span> {{vet.first_name}} {{vet.last_name}}</p>
