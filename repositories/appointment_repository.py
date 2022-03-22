@@ -4,7 +4,7 @@ from datetime import datetime
 from models.appointment import Appointment
 from models.animal import Animal
 from models.treatment import Treatment
-from datetime import datetime
+import datetime
 
 import repositories.animal_repository as animal_repository
 import repositories.treatment_repository as treatment_repository
@@ -28,7 +28,7 @@ def delete_all():
 
 
 def select_all():
-    appointments = []
+    unsorted_appointments = []
     sql = "SELECT * FROM appointments"
     results = run_sql(sql)
 
@@ -37,7 +37,8 @@ def select_all():
         vet = vet_repository.select(row['vet_id'])
         treatment = treatment_repository.select(row['treatment_id'])
         appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
-        appointments.append(appointment)
+        unsorted_appointments.append(appointment)
+    appointments = sorted(unsorted_appointments, key=lambda appointment: appointment.appointment_date)
     return(appointments)
 
 def delete(id):
@@ -78,3 +79,7 @@ def select(id):
 #         appointment = Appointment(animal, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])        
 #         appointments.append(appointment)
 #     return appointments
+
+def inject_today_date():
+    today_date = datetime.date.today()
+    return today_date

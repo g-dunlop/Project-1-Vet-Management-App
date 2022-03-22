@@ -21,6 +21,7 @@
         <div class="form-input">
             <label for="type">Type: </label>
             <select id="type" name="type" required>
+                <option disabled selected value> -- select an option -- </option>
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
                 <option value="hamster">Hamster</option>
@@ -35,6 +36,7 @@
         <div class="form-input">
             <label for="owner">Owner:</label>
             <select id="owner" name="owner_id">
+                <option disabled selected value> -- select an option -- </option>
             {% for owner in all_owners %}
                 {%if owner.registered == True%}
                     <option value="{{ owner.id }}">{{owner.full_name }}</option>
@@ -46,16 +48,14 @@
         <div class="form-input">
             <label for="vet">Vet:</label>
             <select id="vet" name="vet_id">
+                <option disabled selected value> -- select an option -- </option>
                 {% for vet in all_vets %}
                 <option value="{{ vet.id }}">{{vet.full_name }}</option>
                 {% endfor %}
             </select>
         </div>
 
-        <div class="form-input">
-            <label for="treatment_notes">Treatment Notes: </label>
-            <input type="text-area" id="treatment_notes" name="treatment_notes" placeholder="Treatment Notes">
-        </div>
+   
 
         <button class="add-button" type="submit">Add animal</button>
 

@@ -12,8 +12,7 @@
     <p><span class="bold">Phone: </span>{{animal.owner.phone_number}}</p> 
     <p><span class="bold">Email:</span> {{animal.owner.email_address}}</p>
     <p><span class="bold">Vet:</span> {{animal.vet.full_name}}</p>
-    <p><span class="bold">Treatment Notes:</span>{{animal.treatment_notes}}</p>
-
+  
   <div class="button-container">
 
     
@@ -38,18 +37,38 @@
     
   <table>
     {% for appointment in appointments %}
-    <tr>
-      <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
-      <td>{{appointment.vet.full_name}}</td>
-      <td>{{appointment.appointment_time}}</td>
-      <td>{{appointment.reason}}</td>
-      <td>{{appointment.treatment.description}}</td>
-    </tr>
+    {% if appointment.appointment_date > today_date %}
+        <tr>
+          <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+          <td>{{appointment.vet.full_name}}</td>
+          <td>{{appointment.appointment_time}}</td>
+          <td>{{appointment.reason}}</td>
+          <td>{{appointment.treatment.description}}</td>
+        </tr>
+      {% endif %}
     {% endfor %}
+
   </table>
+
+  
 
 </div>
 
 <h2 class="sub-heading">Appointment History:</h2>
+<div class="items-container">
+<table>
+  {% for appointment in appointments %}
+  {% if appointment.appointment_date < today_date %}
+      <tr>
+        <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+        <td>{{appointment.vet.full_name}}</td>
+        <td>{{appointment.appointment_time}}</td>
+        <td>{{appointment.reason}}</td>
+        <td>{{appointment.treatment.description}}</td>
+      </tr>
+    {% endif %}
+  {% endfor %}
 
+</table>
+</div>
 {% endblock %}

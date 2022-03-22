@@ -4,8 +4,10 @@
 
 <h1 class="page-title">Appointments</h1>
 
+<h2>Upcoming:</h2>
 <div class="item-card-container">
 {% for appointment in appointments %}
+  {% if appointment.appointment_date > today_date %}
   <a href="/appointments/{{appointment.id}}"><div class="item-card">
     <p><span class="bold">Date: </span> {{appointment.appointment_date}}</p>
     <p><span class="bold">Time: </span> {{appointment.appointment_time}}</p>
@@ -13,13 +15,23 @@
     <p><span class="bold">Owner: </span> {{appointment.animal.owner.full_name}}</p>
     <p><span class="bold">Vet: </span> {{appointment.vet.full_name}}</p>
   </div></a>
-
-
-
-
+  {% endif %}
 {% endfor %}
 </div>
 <p class="link-container"><a class="add-link" href="appointments/new">Add Appointment</a></p>
    
-
+<h2> Past:</h2>
+<div class="item-card-container">
+  {% for appointment in appointments %}
+    {% if appointment.appointment_date < today_date %}
+    <a href="/appointments/{{appointment.id}}"><div class="item-card">
+      <p><span class="bold">Date: </span> {{appointment.appointment_date}}</p>
+      <p><span class="bold">Time: </span> {{appointment.appointment_time}}</p>
+      <p><span class="bold">Pet: </span> {{appointment.animal.name}}</p>
+      <p><span class="bold">Owner: </span> {{appointment.animal.owner.full_name}}</p>
+      <p><span class="bold">Vet: </span> {{appointment.vet.full_name}}</p>
+    </div></a>
+    {% endif %}
+  {% endfor %}
+  </div>
 {% endblock %}

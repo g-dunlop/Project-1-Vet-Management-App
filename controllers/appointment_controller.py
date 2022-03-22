@@ -15,7 +15,8 @@ appointments_blueprint = Blueprint("appointments", __name__)
 @appointments_blueprint.route("/appointments")
 def appointments():
     appointments = appointment_repository.select_all()
-    return render_template("appointments/index.html", appointments = appointments)
+    today_date = animal_repository.inject_today_date()
+    return render_template("appointments/index.html", appointments = appointments, today_date = today_date)
 
 @appointments_blueprint.route("/appointments/new", methods=['GET'])
 def new_appointment():

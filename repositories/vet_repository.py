@@ -24,13 +24,13 @@ def delete_all():
 
 def select_all():
 
-    vets = []
+    unsorted_vets = []
     sql = "SELECT * FROM vets"
     results = run_sql(sql)
     for row in results:
         vet = Vet(row['full_name'], row['id'])
-        vets.append(vet)
-    # vets.sort()
+        unsorted_vets.append(vet)
+    vets = sorted(unsorted_vets, key=lambda vet: vet.full_name)
     return vets
 
 def sort():
@@ -70,7 +70,7 @@ def animals(vet):
     values = [vet.id]
     results = run_sql(sql, values)
     for row in results:
-        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['id'])
         # animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
         # animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
         animals.append(animal)
@@ -87,7 +87,7 @@ def count_animals(vet):
     results = run_sql(sql, values)
     animals_length = 0
     for row in results:
-        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['id'])
         # animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
         # animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
         animals.append(animal)
@@ -109,7 +109,7 @@ def select_by_name(name):
     # make a join to show appointments
 
 def appointments(vet):
-    appointments = []
+    unsorted_appointments = []
     sql = "SELECT appointments.* from appointments INNER JOIN vets ON appointments.vet_id = vets.id WHERE vet_id = %s"
     values = [vet.id]
     results = run_sql(sql, values)
@@ -117,7 +117,12 @@ def appointments(vet):
         treatment = treatment_repository.select(row['treatment_id'])
         animal = animal_repository.select(row['animal_id'])
         appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
-        appointments.append(appointment)
+        unsorted_appointments.append(appointment)
+    appointments = sorted(unsorted_appointments, key=lambda appointment: appointment.appointment_date)
     return appointments
 
+
+def inject_today_date():
+    today_date = datetime.date.today()
+    return today_date
     

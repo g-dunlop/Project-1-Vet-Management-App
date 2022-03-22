@@ -15,13 +15,14 @@ def delete_all():
     run_sql(sql)
 
 def select_all():
-    owners = []
+    unsorted_owners = []
 
     sql = "SELECT * FROM owners"
     results = run_sql(sql)
     for row in results:
         owner = Owner(row['full_name'], row['phone_number'], row['email_address'], row['address'], row['registered'], row['id'])
-        owners.append(owner)
+        unsorted_owners.append(owner)
+    owners = sorted(unsorted_owners, key=lambda owner: owner.full_name)
     return owners
 
 def select(id):
@@ -53,7 +54,7 @@ def animals(owner):
     values = [owner.id]
     results = run_sql(sql, values) 
     for row in results:
-        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['id'])
         # animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
         # animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
         animals.append(animal)

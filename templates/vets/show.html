@@ -50,6 +50,7 @@
     
   <table>
     {% for appointment in appointments %}
+      {% if appointment.appointment_date > today_date %}
     <tr>
       <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
       <td>{{appointment.animal.name}}</td>
@@ -57,6 +58,7 @@
       <td>{{appointment.reason}}</td>
       <td>{{appointment.treatment.description}}</td>
     </tr>
+      {% endif %}
     {% endfor %}
   </table>
 

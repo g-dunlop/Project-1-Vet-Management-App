@@ -4,6 +4,7 @@ from models.animal import Animal
 import repositories.animal_repository as animal_repository
 import repositories.owner_repository as owner_repository
 import repositories.vet_repository as vet_repository
+from datetime import datetime
 
 animals_blueprint = Blueprint("animals", __name__)
 
@@ -34,8 +35,7 @@ def create_animal():
     type = request.form['type']
     owner = owner_repository.select(request.form['owner_id'])
     vet = vet_repository.select(request.form['vet_id'])
-    treatment_notes = request.form['treatment_notes']
-    animal = Animal(name, date_of_birth, type, owner, vet, treatment_notes )
+    animal = Animal(name, date_of_birth, type, owner, vet)
     animal_repository.save(animal)
     return redirect('/animals')
 
@@ -49,7 +49,11 @@ def delete_owner(id):
 def show_animal(id):
     animal = animal_repository.select(id)
     appointments = animal_repository.appointments(animal)
-    return render_template('animals/show.html', animal = animal, appointments = appointments)
+    today_date = animal_repository.inject_today_date()
+
+    return render_template('animals/show.html', animal = animal, appointments = appointments, today_date = today_date)
+
+
 
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):
@@ -65,7 +69,6 @@ def update_animal(id):
     type = request.form['type']
     owner = owner_repository.select(request.form['owner_id'])
     vet = vet_repository.select(request.form['vet_id'])
-    treatment_notes = request.form['treatment_notes']
-    animal = Animal(name, date_of_birth, type, owner, vet, treatment_notes, id )
+    animal = Animal(name, date_of_birth, type, owner, vet,id )
     animal_repository.update(animal)
     return redirect('/animals')

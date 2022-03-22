@@ -4,6 +4,7 @@ from flask import Blueprint
 from models.vet import Vet
 from models.animal import Animal
 import repositories.vet_repository as vet_repository
+import repositories.animal_repository as animal_repository
 
 vets_blueprint = Blueprint("vets", __name__)
 
@@ -44,7 +45,8 @@ def show_vet(id):
     animals = vet_repository.animals(vet)
     animals_length = vet_repository.count_animals(vet)
     appointments = vet_repository.appointments(vet)
-    return render_template('vets/show.html', vet = vet, animals = animals, animals_length = animals_length, appointments = appointments)
+    today_date = animal_repository.inject_today_date()
+    return render_template('vets/show.html', vet = vet, animals = animals, animals_length = animals_length, appointments = appointments, today_date = today_date)
 
 @vets_blueprint.route("/vets/<id>/edit", methods=['GET'])
 def edit_vet(id):
