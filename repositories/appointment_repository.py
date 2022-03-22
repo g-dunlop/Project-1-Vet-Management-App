@@ -5,6 +5,7 @@ from models.appointment import Appointment
 from models.animal import Animal
 from models.treatment import Treatment
 import datetime
+import calendar
 
 import repositories.animal_repository as animal_repository
 import repositories.treatment_repository as treatment_repository
@@ -86,3 +87,13 @@ def inject_today_date():
 
 # def appointments_available()
 #     vet_appointments = vet_repository.appointments
+
+# def create_calendar():
+#     yy = 2022
+#     mm = 3
+   
+#     my_calendar = calendar.month(yy,mm)
+#     return my_calendar
+
+
+

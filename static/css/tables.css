@@ -1,0 +1,12 @@
+table{
+    background-color:rgb(193, 224, 252);
+    border-radius:5px;
+    border:2px solid white;
+    font-family:"Arvo", serif;
+    margin:1rem;
+}
+
+td{
+    padding:0.5rem;
+    border:1px solid white;
+}

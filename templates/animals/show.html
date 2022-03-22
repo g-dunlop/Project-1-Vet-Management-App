@@ -3,19 +3,21 @@
 {% block content %}
 
 <h1 class="page-title">Animal</h1>
-<div class="item-card-container">
+
+
+  <div class="item-card-container">
   <div class="item-card-individual">
+    <img class="item-card-image" src="/static/images/background-2.png">
     <p><span class="bold">Name:</span> {{animal.name}}</a></p>
-    <p><span class="bold">D/o/B:</span> {{animal.date_of_birth}}</p>
+    <p><span class="bold">D.o.B:</span> {{animal.date_of_birth}}</p>
     <p><span class="bold">Type: </span>{{animal.type}}</p>
     <p><span class="bold">Owner:</span> {{animal.owner.full_name}} </p> 
     <p><span class="bold">Phone: </span>{{animal.owner.phone_number}}</p> 
     <p><span class="bold">Email:</span> {{animal.owner.email_address}}</p>
     <p><span class="bold">Vet:</span> {{animal.vet.full_name}}</p>
   
-  <div class="button-container">
+  <div class="link-container">
 
-    
     <div>
       <form action="/animals/{{animal.id}}/edit" method="GET">
         <button>Edit</button>
@@ -34,7 +36,7 @@
 
 <h2 class="sub-heading">Upcoming Appointments:</h2>
 <div class="items-container">
-    
+  
   <table>
     {% for appointment in appointments %}
     {% if appointment.appointment_date > today_date %}
@@ -56,6 +58,7 @@
 
 <h2 class="sub-heading">Appointment History:</h2>
 <div class="items-container">
+  
 <table>
   {% for appointment in appointments %}
   {% if appointment.appointment_date < today_date %}
@@ -68,7 +71,7 @@
       </tr>
     {% endif %}
   {% endfor %}
-
 </table>
 </div>
 {% endblock %}
+
