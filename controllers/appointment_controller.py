@@ -41,8 +41,10 @@ def create_appointment():
     reason = request.form['reason']
     # pdb.set_trace()
     treatment = treatment_repository.select(request.form['treatment_id'])
+
+    notes= request.form['notes']
     # pdb.set_trace()
-    appointment = Appointment(animal, vet, appointment_date, appointment_time, reason, treatment)
+    appointment = Appointment(animal, vet, appointment_date, appointment_time, reason, treatment, notes)
    
     appointment_repository.save(appointment)
     return redirect('/appointments')
@@ -81,8 +83,9 @@ def update_appointment(id):
     reason = request.form['reason']
     # pdb.set_trace()
     treatment = treatment_repository.select(request.form['treatment_id'])
+    notes= request.form['notes']
     # pdb.set_trace()
-    appointment = Appointment(animal, vet, appointment_date, appointment_time, reason, treatment, id)
+    appointment = Appointment(animal, vet, appointment_date, appointment_time, reason, treatment, notes, id)
     appointment_repository.update(appointment)
     return redirect('/appointments')
 

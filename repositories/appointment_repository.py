@@ -37,7 +37,7 @@ def select_all():
         animal = animal_repository.select(row['animal_id'])
         vet = vet_repository.select(row['vet_id'])
         treatment = treatment_repository.select(row['treatment_id'])
-        appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
+        appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['notes'], row['id'])
         unsorted_appointments.append(appointment)
     appointments = sorted(unsorted_appointments, key=lambda appointment: appointment.appointment_time)
     appointments = sorted(appointments, key=lambda appointment: appointment.appointment_date)
@@ -50,8 +50,8 @@ def delete(id):
 
 
 def update(appointment):
-    sql = "UPDATE appointments SET (animal_id, vet_id, appointment_date, appointment_time, reason, treatment_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [appointment.animal.id, appointment.vet.id, appointment.appointment_date, appointment.appointment_time, appointment.reason, appointment.treatment.id, appointment.id]
+    sql = "UPDATE appointments SET (animal_id, vet_id, appointment_date, appointment_time, reason, treatment_id, notes) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [appointment.animal.id, appointment.vet.id, appointment.appointment_date, appointment.appointment_time, appointment.reason, appointment.treatment.id, appointment.notes, appointment.id]
     print(values)
     run_sql(sql, values)
 
@@ -66,7 +66,7 @@ def select(id):
         vet = vet_repository.select(result['vet_id'])
         animal = animal_repository.select(result['animal_id'])
         treatment = treatment_repository.select(result['treatment_id'])
-        appointment = Appointment(animal, vet, result['appointment_date'], result['appointment_time'], result['reason'], treatment, result['id'])           
+        appointment = Appointment(animal, vet, result['appointment_date'], result['appointment_time'], result['reason'], treatment, result['notes'], result['id'])           
     return appointment
 
 # def select_by_date(appointment_date):

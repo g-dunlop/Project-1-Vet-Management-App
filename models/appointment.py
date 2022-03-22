@@ -13,5 +13,5 @@ class Appointment:
     #     treatments=self.treatments
     #     for treatment in treatment:
 
-    def add_to_treatments(self, treatment):
-        self.treatments.append(treatment)
+    # def add_to_treatments(self, treatment):
+    #     self.treatments.append(treatment)

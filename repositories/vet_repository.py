@@ -116,7 +116,7 @@ def appointments(vet):
     for row in results:
         treatment = treatment_repository.select(row['treatment_id'])
         animal = animal_repository.select(row['animal_id'])
-        appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
+        appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['notes'], row['id'])
         unsorted_appointments.append(appointment)
     
     appointments = sorted(unsorted_appointments, key = lambda appointment: appointment.appointment_time)

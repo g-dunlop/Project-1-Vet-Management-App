@@ -105,7 +105,7 @@ treatments = treatment_repository.select_by_name("Vet consult")
 for treatment in treatments:
     print(treatment.__dict__)
 
-appointment1 = Appointment(animal1, vet1, '2022-08-21', '15:00', 'He is acting like a person', treatment1)
+appointment1 = Appointment(animal1, vet1, '2022-08-21', '15:00', 'He is acting like a person', treatment1, "n/a")
 appointment_repository.save(appointment1)
 
 appointments = appointment_repository.select_all()

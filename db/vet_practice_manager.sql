@@ -44,7 +44,7 @@ CREATE TABLE appointments (
     appointment_time TIME,
     reason VARCHAR(255),
     treatment_id INT REFERENCES treatments(id) ON DELETE CASCADE,
-    notes VARCHAR(MAX)
+    notes TEXT
 );
 
 -- SELECT * FROM animals INNER JOIN vets ON animals.vet_id = vets.id;
