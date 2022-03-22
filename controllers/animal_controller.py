@@ -26,7 +26,8 @@ def animals():
 def new_animal():
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
-    return render_template("animals/new.html", all_owners = owners, all_vets = vets)
+    today_date = animal_repository.inject_today_date()
+    return render_template("animals/new.html", all_owners = owners, all_vets = vets, today_date = today_date)
 
 @animals_blueprint.route("/animals", methods=['POST'])
 def create_animal():
@@ -37,6 +38,7 @@ def create_animal():
     vet = vet_repository.select(request.form['vet_id'])
     animal = Animal(name, date_of_birth, type, owner, vet)
     animal_repository.save(animal)
+    
     return redirect('/animals')
 
 
@@ -60,7 +62,8 @@ def edit_animal(id):
     animal = animal_repository.select(id)
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
-    return render_template('animals/edit.html', animal = animal, all_owners = owners, all_vets = vets)
+    today_date = animal_repository.inject_today_date()
+    return render_template('animals/edit.html', animal = animal, all_owners = owners, all_vets = vets, today_date = today_date)
 
 @animals_blueprint.route("/animals/<id>", methods = ['POST'])
 def update_animal(id):

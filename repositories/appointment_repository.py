@@ -83,3 +83,6 @@ def select(id):
 def inject_today_date():
     today_date = datetime.date.today()
     return today_date
+
+# def appointments_available()
+#     vet_appointments = vet_repository.appointments

@@ -24,7 +24,8 @@ def new_appointment():
     treatments = treatment_repository.select_all()
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
-    return render_template("appointments/new.html", all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets)
+    today_date = appointment_repository.inject_today_date()
+    return render_template("appointments/new.html", all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets, today_date = today_date)
 
 
 @appointments_blueprint.route("/appointments", methods=['POST'])
@@ -64,7 +65,8 @@ def edit_appointment(id):
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
     treatments = treatment_repository.select_all()
-    return render_template('appointments/edit.html', all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets, appointment = appointment)
+    today_date = appointment_repository.inject_today_date()
+    return render_template('appointments/edit.html', all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets, appointment = appointment, today_date = today_date)
 
 @appointments_blueprint.route("/appointments/<id>", methods = ['POST'])
 def update_appointment(id):

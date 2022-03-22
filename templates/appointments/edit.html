@@ -28,7 +28,7 @@
 
         <div class="form-input">
             <label for="appointment_date">Date: </label>
-            <input type="date" id="appointment_date" name="appointment_date" value="{{appointment.appointment_date}}" required>
+            <input type="date" id="appointment_date" name="appointment_date" value="{{appointment.appointment_date}}" min="{{today_date}}" required>
         </div>
 
         <div class="form-input">
