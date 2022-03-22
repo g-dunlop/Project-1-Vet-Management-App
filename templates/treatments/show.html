@@ -8,7 +8,8 @@
   <div class="item-card-individual">
     <p><span class="bold">Treatment: </span> {{treatment.description}}</p>
     <p><span class="bold">Price: </span> {{treatment.price}}</p>
-
+    
+    <div class="link-container">
   <div class="button-container">
     <div>
         <form action="/treatments/{{treatment.id}}/edit" method="GET">
@@ -22,6 +23,7 @@
           <button class="delete">Delete</button>
         </form>
       </div>
+    </div>
     </div>
   </div>
 </div>

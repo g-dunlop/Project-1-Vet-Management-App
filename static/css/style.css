@@ -154,8 +154,8 @@ h2 {
 
 .item-card-image{
     position:absolute;
-    top:0;
-    right:0;
+    top:5px;
+    right:5px;
     width:150px;
     height:150px;
 }

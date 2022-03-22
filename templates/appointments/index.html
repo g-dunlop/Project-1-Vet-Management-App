@@ -6,34 +6,81 @@
 
 {{calendar}}
 
-<h2>Upcoming:</h2>
-<div class="item-card-container">
+<h2>Upcoming:</h2> 
+
+<div class="items-container">
+  <table>
+    {% for appointment in appointments %}
+      {% if appointment.appointment_date > today_date %}
+    <tr>
+      
+      {% if appointment.appointment_date == today_date %}
+       <td> <a href="/appointments/{{appointment.id}}">Today</a></td>
+      {% else %} 
+      <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+      {% endif %}
+      <td>{{appointment.appointment_time}}</td>
+      <td>{{appointment.animal.name}}</td>
+      <td>{{appointment.animal.owner.full_name}}</td>
+      <td>{{appointment.reason}}</td>
+      <td>{{appointment.treatment.description}}</td>
+    </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
+
+<!-- <div class="item-card-container">
 {% for appointment in appointments %}
-  {% if appointment.appointment_date > today_date %}
-  <a href="/appointments/{{appointment.id}}"><div class="item-card">
+  {% if appointment.appointment_date > today_date %} -->
+  <!-- <a href="/appointments/{{appointment.id}}"><div class="item-card">
     <p><span class="bold">Date: </span> {{appointment.appointment_date}}</p>
     <p><span class="bold">Time: </span> {{appointment.appointment_time}}</p>
     <p><span class="bold">Pet: </span> {{appointment.animal.name}}</p>
     <p><span class="bold">Owner: </span> {{appointment.animal.owner.full_name}}</p>
     <p><span class="bold">Vet: </span> {{appointment.vet.full_name}}</p>
-  </div></a>
-  {% endif %}
+  </div></a> -->
+  <!-- {% endif %}
 {% endfor %}
-</div>
+</div> -->
+
 <p class="link-container"><a class="add-link" href="appointments/new">Add Appointment</a></p>
    
 <h2> Past:</h2>
+<div class="items-container">
+  <table>
+    {% for appointment in appointments %}
+      {% if appointment.appointment_date <= today_date %}
+    <tr>
+      
+      {% if appointment.appointment_date == today_date %}
+       <td> <a href="/appointments/{{appointment.id}}">Today</a></td>
+      {% else %} 
+      <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+      {% endif %}
+      <td>{{appointment.appointment_time}}</td>
+      <td>{{appointment.animal.name}}</td>
+      <td>{{appointment.animal.owner.full_name}}</td>
+      <td>{{appointment.reason}}</td>
+      <td>{{appointment.treatment.description}}</td>
+    </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</div>
+<!-- <h2> Past:</h2>
 <div class="item-card-container">
   {% for appointment in appointments %}
-    {% if appointment.appointment_date < today_date %}
-    <a href="/appointments/{{appointment.id}}"><div class="item-card">
+    {% if appointment.appointment_date < today_date %} -->
+    <!-- <a href="/appointments/{{appointment.id}}"><div class="item-card">
       <p><span class="bold">Date: </span> {{appointment.appointment_date}}</p>
       <p><span class="bold">Time: </span> {{appointment.appointment_time}}</p>
       <p><span class="bold">Pet: </span> {{appointment.animal.name}}</p>
       <p><span class="bold">Owner: </span> {{appointment.animal.owner.full_name}}</p>
       <p><span class="bold">Vet: </span> {{appointment.vet.full_name}}</p>
-    </div></a>
-    {% endif %}
+    </div></a> -->
+    <!-- {% endif %}
   {% endfor %}
-  </div>
+  </div> -->
+
 {% endblock %}

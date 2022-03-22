@@ -18,7 +18,7 @@ vet_repository.delete_all()
 owner_repository.delete_all()
 treatment_repository.delete_all()
 
-vet1 = Vet('Martina Simplowicz')
+vet1 = Vet('Martina Plowicz')
 vet_repository.save(vet1)
 
 vet2 = Vet('James Herriot')
@@ -80,7 +80,7 @@ animal_repository.save(animal2)
 # animal=animal_repository.select_by_name('Collin')
 # print(animal.__dict__)
 
-treatment1 = Treatment("Vet consult", 15.25)
+treatment1 = Treatment("Vet consultation", 15.25)
 treatment_repository.save(treatment1)
 
 treatment2 = Treatment("Rabies Vaccination", 80.00)

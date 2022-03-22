@@ -39,7 +39,8 @@ def select_all():
         treatment = treatment_repository.select(row['treatment_id'])
         appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
         unsorted_appointments.append(appointment)
-    appointments = sorted(unsorted_appointments, key=lambda appointment: appointment.appointment_date)
+    appointments = sorted(unsorted_appointments, key=lambda appointment: appointment.appointment_time)
+    appointments = sorted(appointments, key=lambda appointment: appointment.appointment_date)
     return(appointments)
 
 def delete(id):
