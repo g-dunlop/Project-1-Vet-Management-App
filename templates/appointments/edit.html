@@ -18,6 +18,15 @@
         </div>
 
         <div class="form-input">
+            <label for="vet">Vet Name:</label>
+            <select id="vet" name="vet_id">
+            {% for vet in all_vets %}
+                    <option value="{{ vet.id }}" {% if appointment.vet.name == vet.name %} selected="selected"{% endif %}>{{vet.full_name}}</option>
+            {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-input">
             <label for="appointment_date">Date: </label>
             <input type="date" id="appointment_date" name="appointment_date" value="{{appointment.appointment_date}}" required>
         </div>

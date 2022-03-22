@@ -4,7 +4,10 @@ from datetime import datetime
 from models.vet import Vet
 from models.animal import Animal
 from models.owner import Owner
+from models.appointment import Appointment
 import repositories.owner_repository as owner_repository
+import repositories.animal_repository as animal_repository
+import repositories.treatment_repository as treatment_repository
 
 def save(vet):
     sql = "INSERT INTO vets(full_name) VALUES (%s) RETURNING *"
@@ -22,7 +25,6 @@ def delete_all():
 def select_all():
 
     vets = []
-
     sql = "SELECT * FROM vets"
     results = run_sql(sql)
     for row in results:
@@ -105,5 +107,17 @@ def select_by_name(name):
 
 
     # make a join to show appointments
+
+def appointments(vet):
+    appointments = []
+    sql = "SELECT appointments.* from appointments INNER JOIN vets ON appointments.vet_id = vets.id WHERE vet_id = %s"
+    values = [vet.id]
+    results = run_sql(sql, values)
+    for row in results:
+        treatment = treatment_repository.select(row['treatment_id'])
+        animal = animal_repository.select(row['animal_id'])
+        appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
+        appointments.append(appointment)
+    return appointments
 
     
