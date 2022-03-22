@@ -42,7 +42,8 @@ def delete_vet(id):
 def show_vet(id):
     vet = vet_repository.select(id)
     animals = vet_repository.animals(vet)
-    return render_template('vets/show.html', vet = vet, animals = animals)
+    animals_length = vet_repository.count_animals(vet)
+    return render_template('vets/show.html', vet = vet, animals = animals, animals_length = animals_length)
 
 @vets_blueprint.route("/vets/<id>/edit", methods=['GET'])
 def edit_vet(id):

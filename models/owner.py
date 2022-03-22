@@ -5,4 +5,5 @@ class Owner:
         self.email_address = email_address
         self.address = address
         self.registered = registered
+        self.pets=[]
         self.id = id

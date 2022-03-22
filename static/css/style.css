@@ -108,7 +108,7 @@ nav > ul > li > a{
 .item-card-container{
     display:inline-flex;
     flex-wrap: wrap;
-    padding:2rem;
+    padding:1rem;
     width:95%;
     justify-content:center; 
 }
@@ -121,7 +121,7 @@ nav > ul > li > a{
     width:12rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(10, 10, 95);
-    margin: 2rem 2rem 2rem 2rem;
+    margin: 1rem 1rem 1rem 1rem;
    
 }
 
@@ -137,7 +137,7 @@ nav > ul > li > a{
     width:20rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color:rgb(10, 10, 95);
-    margin: 2rem 2rem 2rem 2rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 .item-card-individual > p{

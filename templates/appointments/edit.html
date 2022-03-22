@@ -25,13 +25,14 @@
         <div class="form-input">
             <label for="appointment_time">Time: </label>
             <select id="appointment-time" name="appointment_time" required>
-                <option value="09:00" {% if appointment.appointment_time == "09:00:00" %} selected = "selected"{% endif %}>09:00</option>
-                <option value="10:00" {% if appointment.appointment_time == "10:00" %} selected = "selected"{% endif %}>10:00</option>
-                <option value="11:00" {% if appointment.appointment_time == "11:00" %} selected = "selected"{% endif %}>11:00</option>
-                <option value="12:00" {% if appointment.appointment_time == "12:00:00" %} selected = "selected"{% endif %}>12:00</option>
-                <option value="14:00" {% if appointment.appointment_time == "14:00" %} selected = "selected"{% endif %}>14:00</option>
-                <option value="15:00" {% if appointment.appointment_time == "15:00" %} selected = "selected"{% endif %}>15:00</option>
-                <option value="16:00" {% if appointment.appointment_time == "16:00" %} selected = "selected"{% endif %}>16:00</option>
+                
+                    <option value="09:00" {% if appointment.appointment_time == "09:00:00" %} selected = "selected"{% endif %}>09:00</option>
+                    <option value="10:00" {% if appointment.appointment_time == "10:00" %} selected = "selected"{% endif %}>10:00</option>
+                    <option value="11:00" {% if appointment.appointment_time == "11:00" %} selected = "selected"{% endif %}>11:00</option>
+                    <option value="12:00" {% if appointment.appointment_time == "12:00:00" %} selected = "selected"{% endif %}>12:00</option>
+                    <option value="14:00" {% if appointment.appointment_time == "14:00" %} selected = "selected"{% endif %}>14:00</option>
+                    <option value="15:00" {% if appointment.appointment_time == "15:00" %} selected = "selected"{% endif %}>15:00</option>
+                    <option value="16:00" {% if appointment.appointment_time == "16:00" %} selected = "selected"{% endif %}>16:00</option>
             </select>
         </div>
 

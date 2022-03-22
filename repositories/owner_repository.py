@@ -54,8 +54,8 @@ def animals(owner):
     results = run_sql(sql, values) 
     for row in results:
         animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
-        animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
-        animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
+        # animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
+        # animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
         animals.append(animal)
     return animals
 

@@ -14,6 +14,7 @@
      {{owner.email_address}}</p>
     <p><span class="bold"> Address:</span> {{owner.address}}</p>
 
+
   <div class="button-container">
     <div>
         <form action="/owners/{{owner.id}}/edit" method="GET">
@@ -33,19 +34,21 @@
 <h2 class="sub-heading">Pets: </h2>
 <div class="items-container">
   
-  
-  {% for animal in animals %}
-  <ul>
-    <a href="/animals/{{animal['id']}}">
-  <div class="item-card">
-    <li>{{animal.name}}</li>
-    <li>{{animal.date_of_birth}}</li>
-    <li>{{animal.type}}</li>
-  </div>
-</a>
-  </ul>
-  
-  {% endfor %}
-</div>
 
+  <table>
+    {% for animal in animals %}
+    
+    
+    <tr>
+     
+      <td> <a href="/animals/{{animal.id}}">{{animal.name}}</a></td>
+      <td>{{animal.date_of_birth}}</td>
+      <td>{{animal.type}}</td>
+    </tr>
+
+    
+    {% endfor %}
+  </table>
+
+</div>
 {% endblock %}

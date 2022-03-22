@@ -48,7 +48,8 @@ def delete_owner(id):
 @animals_blueprint.route("/animals/<id>")
 def show_animal(id):
     animal = animal_repository.select(id)
-    return render_template('animals/show.html', animal = animal)
+    appointments = animal_repository.appointments(animal)
+    return render_template('animals/show.html', animal = animal, appointments = appointments)
 
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):

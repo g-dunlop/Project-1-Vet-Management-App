@@ -4,6 +4,7 @@ from datetime import datetime
 from models.appointment import Appointment
 from models.animal import Animal
 from models.treatment import Treatment
+from datetime import datetime
 
 import repositories.animal_repository as animal_repository
 import repositories.treatment_repository as treatment_repository
@@ -16,6 +17,8 @@ def save(appointment):
     # pdb.set_trace()
     appointment.id = results[0]['id']
     # pdb.set_trace()
+
+    # appointment.add_to_treatments(appointment.treatment)
     return appointment
 
 def delete_all():
