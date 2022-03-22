@@ -83,6 +83,7 @@ def count_animals(vet):
     sql = "SELECT animals.* FROM animals INNER JOIN vets ON animals.vet_id = vets.id WHERE vet_id = %s"
     values = [vet.id]
     results = run_sql(sql, values)
+    animals_length = 0
     for row in results:
         animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['treatment_notes'], row['id'])
         # animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))

@@ -40,6 +40,7 @@
     {% for appointment in appointments %}
     <tr>
       <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+      <td>{{appointment.vet.full_name}}</td>
       <td>{{appointment.appointment_time}}</td>
       <td>{{appointment.reason}}</td>
       <td>{{appointment.treatment.description}}</td>

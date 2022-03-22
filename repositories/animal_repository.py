@@ -86,6 +86,7 @@ def appointments(animal):
     results = run_sql(sql, values)
     for row in results:
         treatment = treatment_repository.select(row['treatment_id'])
-        appointment = Appointment(animal, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
+        vet = vet_repository.select(row['vet_id'])
+        appointment = Appointment(animal, vet, row['appointment_date'], row['appointment_time'], row['reason'], treatment, row['id'])
         appointments.append(appointment)
     return appointments

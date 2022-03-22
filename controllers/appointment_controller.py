@@ -22,14 +22,15 @@ def new_appointment():
     animals = animal_repository.select_all()
     treatments = treatment_repository.select_all()
     owners = owner_repository.select_all()
-    # vets = vet_repository.select_all()
-    return render_template("appointments/new.html", all_animals = animals, all_treatments = treatments, all_owners = owners)
+    vets = vet_repository.select_all()
+    return render_template("appointments/new.html", all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets)
 
 
 @appointments_blueprint.route("/appointments", methods=['POST'])
 def create_appointment():
     animal = animal_repository.select(request.form['animal_id'])
     # pdb.set_trace()
+    vet = vet_repository.select(request.form['vet_id'])
     appointment_date = request.form['appointment_date']
     # pdb.set_trace()
     appointment_time = request.form['appointment_time']
@@ -38,7 +39,7 @@ def create_appointment():
     # pdb.set_trace()
     treatment = treatment_repository.select(request.form['treatment_id'])
     # pdb.set_trace()
-    appointment = Appointment(animal, appointment_date, appointment_time, reason, treatment)
+    appointment = Appointment(animal, vet, appointment_date, appointment_time, reason, treatment)
    
     appointment_repository.save(appointment)
     return redirect('/appointments')
@@ -68,6 +69,7 @@ def edit_appointment(id):
 def update_appointment(id):
     animal = animal_repository.select(request.form['animal_id'])
     # pdb.set_trace()
+    vet = animal_repository.select(request.form['vet_id'])
     appointment_date = request.form['appointment_date']
     # pdb.set_trace()
     appointment_time = request.form['appointment_time']
@@ -76,7 +78,7 @@ def update_appointment(id):
     # pdb.set_trace()
     treatment = treatment_repository.select(request.form['treatment_id'])
     # pdb.set_trace()
-    appointment = Appointment(animal, appointment_date, appointment_time, reason, treatment, id)
+    appointment = Appointment(animal, vet, appointment_date, appointment_time, reason, treatment, id)
     appointment_repository.update(appointment)
     return redirect('/appointments')
 

@@ -1,6 +1,7 @@
 class Appointment:
-    def __init__(self, animal, appointment_date, appointment_time, reason, treatment, id=None):
+    def __init__(self, animal, vet, appointment_date, appointment_time, reason, treatment, id=None):
         self.animal = animal
+        self.vet = vet
         self.appointment_date = appointment_date
         self.appointment_time = appointment_time
         self.reason = reason
