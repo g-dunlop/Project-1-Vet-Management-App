@@ -27,19 +27,19 @@ vet_repository.save(vet2)
 vet3 = Vet('Bernard Matthews')
 vet_repository.save(vet3)
 
-vet1.full_name = 'Bob'
-vet_repository.update(vet1)
+# vet1.full_name = 'Bob'
+# vet_repository.update(vet1)
 
-owner1 = Owner("Laurie", "08564489732", "laurie.surname@mail.com", "5 The House, Larbert, FK9 2BE")
+owner1 = Owner("Laurie Miller", "08564489732", "laurie.surname@mail.com", "5 The House, Larbert, FK9 2BE")
 owner_repository.save(owner1)
 
-owner2 = Owner("Graeme", "08564489733", "graeme.surname@mail.com", "5 The House, Larbert, FK9 2BE")
+owner2 = Owner("Graeme Dunlop", "08564489733", "graeme.surname@mail.com", "5 The House, Larbert, FK9 2BE")
 owner_repository.save(owner2)
 
-owner3 = Owner("Jon", "023498593832", "jon.surname@gmail.com", "23 The Flat, Derby, DB8 2GB")
+owner3 = Owner("Jon Boig", "023498593832", "jon.surname@gmail.com", "23 The Flat, Derby, DB8 2GB")
 owner_repository.save(owner3)
 
-owner4 = Owner("George", "084928320192", "george.surname@gmail.com", "The House, Dumfries, DG3 9KD")
+owner4 = Owner("George Dun", "084928320192", "george.surname@gmail.com", "The House, Dumfries, DG3 9KD")
 owner_repository.save(owner4)
 # owner2.phone_number = "099999999999"
 # owner_repository.update(owner2)
@@ -48,7 +48,6 @@ animal1 = Animal("Tony", "2017-11-11", "cat", owner1, vet1)
 animal_repository.save(animal1)
 # pdb.set_trace()
 # animal1.name = "Toni"
-
 # animal_repository.update(animal1)
 
 animal2 = Animal("Collin", "2018-12-15", "cat", owner2, vet1)

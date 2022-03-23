@@ -23,12 +23,13 @@ nav{
     display: inline-flex;
     width:100%;
     justify-content:space-between;
-    margin-bottom:2rem;
+    
+    border-bottom: 2px solid white;
 }
 
 nav > .logo  {
     width:50%;
-    padding: 0;
+    padding-top: 0.5rem;
     font-family:"Arvo", serif;
     font-size:2rem;
     color:white;
@@ -65,7 +66,7 @@ nav > ul > li{
     text-align:center;
     padding:1rem;
     font-family:'Arvo', serif;
-    border-left: 2px dotted grey;
+    /* border-left: 2px dotted lightgray; */
     font-size:1rem;
 }
 
