@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -25,7 +26,7 @@
           <a href="/vets">Vets</a>
         </li>
         <div class="dropdown">
-          <button class="dropbtn">Admin<i class="fa fa-caret-down"></i></button>
+          <button class="dropbtn">Admin  <i class="fa fa-caret-down"></i></button>
           <div class="dropdown-content">
             <li>
               <a href="/owners">Owners</a>
@@ -45,15 +46,19 @@
     </nav>
   </header>
   <main>
+    
     <section >
-      
+      <img class="cat-face" src="/static/images/cat.jpg">
 
         {% block content %}
           
         {% endblock %}
 
-  </section>
+    </section>
+
   </main>
+  
+  </body>
   <footer>
 
     <p> &copy; 50 Shades of Spay Ltd.</p>
@@ -62,5 +67,5 @@
 
 
   </footer>
-  </body>
-
+  
+</html>
