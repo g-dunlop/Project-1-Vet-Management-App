@@ -36,3 +36,10 @@ button:hover {
     border:1px solid white;
     border-radius:25px;
 }
+
+
+.appointments-button{
+    font-size:0.75rem;
+    width:3rem;
+    margin:0;
+}
