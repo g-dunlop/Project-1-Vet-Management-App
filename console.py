@@ -27,8 +27,8 @@ vet_repository.save(vet2)
 vet3 = Vet('Bernard Matthews')
 vet_repository.save(vet3)
 
-# vet1.first_name = 'Bob'
-# vet_repository.update(vet1)
+vet1.full_name = 'Bob'
+vet_repository.update(vet1)
 
 owner1 = Owner("Laurie", "08564489732", "laurie.surname@mail.com", "5 The House, Larbert, FK9 2BE")
 owner_repository.save(owner1)

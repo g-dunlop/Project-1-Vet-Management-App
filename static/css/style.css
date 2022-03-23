@@ -1,9 +1,7 @@
 *{
     margin:0;
     padding:0;
-    border:border-box;
-    
-    
+    border:border-box; 
 }
 
 body{
@@ -12,7 +10,9 @@ body{
     background-color:rgb(14, 126, 160);
 }
 
-
+main{
+    min-height:80vh;
+}
 
 a{
     text-decoration:none;

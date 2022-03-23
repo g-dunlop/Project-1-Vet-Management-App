@@ -26,7 +26,7 @@ CREATE TABLE animals (
     date_of_birth VARCHAR(255),
     type VARCHAR(255),
     owner_id INT REFERENCES owners(id) ON DELETE CASCADE,
-    vet_id INT REFERENCES vets(id) ON DELETE CASCADE
+    vet_id INT REFERENCES vets(id) 
     -- treatment notes will eventually be reference to appointment_id
 );
 
@@ -39,11 +39,11 @@ CREATE TABLE treatments (
 CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
     animal_id INT REFERENCES animals(id) ON DELETE CASCADE,
-    vet_id INT REFERENCES vets(id) ON DELETE CASCADE,
+    vet_id INT REFERENCES vets(id),
     appointment_date DATE,
     appointment_time TIME,
     reason VARCHAR(255),
-    treatment_id INT REFERENCES treatments(id) ON DELETE CASCADE,
+    treatment_id INT REFERENCES treatments(id),
     notes TEXT
 );
 

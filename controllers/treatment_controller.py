@@ -12,7 +12,6 @@ def treatments():
     treatments = treatment_repository.select_all()
     searched = request.args.get('searched')
     
-    
     if searched:
         searched = searched.capitalize()
         treatments = treatment_repository.select_by_name(searched)

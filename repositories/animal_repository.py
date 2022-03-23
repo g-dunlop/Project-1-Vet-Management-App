@@ -65,7 +65,6 @@ def select(id):
         # animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
     return animal
 
-
 def select_by_name(name):
     animals = []
     sql = "SELECT * FROM animals WHERE name LIKE %s"

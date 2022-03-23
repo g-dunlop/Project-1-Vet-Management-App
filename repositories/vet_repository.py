@@ -23,10 +23,11 @@ def delete_all():
 
 
 def select_all():
-
     unsorted_vets = []
+
     sql = "SELECT * FROM vets"
     results = run_sql(sql)
+
     for row in results:
         vet = Vet(row['full_name'], row['id'])
         unsorted_vets.append(vet)
@@ -38,6 +39,7 @@ def sort():
 
     sql = "SELECT * FROM vets"
     results = run_sql(sql)
+    
     for row in results:
         vet = Vet(row['full_name'], row['id'])
         vets.append(vet)
@@ -60,7 +62,7 @@ def delete(id):
 
 
 def update(vet):
-    sql = "UPDATE vets SET (full_name) = (%s) WHERE id = %s"
+    sql = "UPDATE vets SET full_name = %s WHERE id = %s"
     values = [vet.full_name, vet.id]
     run_sql(sql, values)
 
