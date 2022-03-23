@@ -10,9 +10,8 @@
             <label for="animal">Pet Name:</label>
             <select id="animal" name="animal_id">
             {% for animal in all_animals %}
-                {%if animal.owner.registered == True%}
                     <option value="{{ animal.id }}" {% if appointment.animal.name == animal.name %} selected="selected"{% endif %}>{{animal.name}}</option>
-                {%endif%}
+                
             {% endfor %}
             </select>
         </div>

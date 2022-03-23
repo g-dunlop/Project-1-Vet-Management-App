@@ -15,7 +15,35 @@
 </div>
 
 <h1 class="page-title">Animals: {{animal_count}}</h1>
-<div class="item-card-container">
+
+<div class="items-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Type</th>
+        <th>Vet</th>
+        
+      </tr>
+    </thead>
+
+{% for animal in animals %}
+
+    <tr>
+      <td>{{animal.name}}</td>
+      <td>{{animal.owner.full_name}}</td>
+      <td>{{animal.type}}</td>
+      <td>{{animal.vet.full_name}}</td>
+      <td><a href="animals/{{animal.id}}">Go To Page</td>
+    </tr>
+  
+    {% endfor %}
+  </table>
+</div>
+
+
+<!-- <div class="item-card-container">
 {% for animal in animals %}
   <a href="/animals/{{animal.id}}"><div class="item-card">
     <p><span class="bold">Name: </span> {{animal.name}}</p>
@@ -23,12 +51,9 @@
     <p><span class="bold">Type: </span> {{animal.type}}</p>
   </div></a> 
 
-<!-- <form action="/animals/{{animal.id}}/delete" method="POST">
-    <button>Delete</button>
-  </form>
-</div> -->
+
 {% endfor %}
-</div>
+</div> -->
 <p class="link-container"><a class="add-link" href="animals/new">Add Animal</a></p>
    
 

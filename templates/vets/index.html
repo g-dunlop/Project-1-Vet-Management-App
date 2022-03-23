@@ -13,17 +13,27 @@
 </div>
 </div>
 <h1 class="page-title">Vets</h1>
-<div class="item-card-container">
+
+
+<div class="items-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+      </tr>
+    </thead>
+
 {% for vet in vets %}
 
-
-  <a href="/vets/{{vet.id}}"><div class="item-card">
-    <p><span class="bold">Name: </span> {{vet.full_name}}</p>
+    <tr>
+      <td>{{vet.full_name}}</td>
+      <td><a href="vets/{{vet.id}}">Go To Page</td>
+    </tr>
   
-  </div></a>
-
-{% endfor %}
+    {% endfor %}
+  </table>
 </div>
+
 <p class="link-container"><a class="add-link" href="vets/new">Add Vet</a></p>
 
 {% endblock %}

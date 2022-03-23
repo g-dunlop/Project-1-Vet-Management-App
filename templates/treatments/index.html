@@ -13,7 +13,9 @@
 </div>
 </div>
 <h1 class="page-title">Treatments</h1>
-<div class="item-card-container">
+
+
+<!-- <div class="item-card-container">
 {% for treatment in treatments %}
 
 
@@ -22,10 +24,36 @@
     <p><span class="bold">Price: </span> {{treatment.price}}</p>
         </div></a>
 
-    {% endfor %}
+    {% endfor %} -->
   </div>
   
-
+  <div class="items-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+  
+  {% for treatment in treatments %}
+  
+      <tr>
+        <td>{{treatment.description}}</td>
+        <td>{{treatment.price}}</td>
+        <td><form action="/treatments/{{treatment.id}}/edit" method="GET">
+          <button>Edit</button>
+        </form></td>
+        <td>
+          <form action="/treatments/{{treatment.id}}/delete" method="POST">
+            <button class="delete">Delete</button>
+          </form></td>
+      </tr>
+    
+      {% endfor %}
+    </table>
+  </div>
+  
 
    
 

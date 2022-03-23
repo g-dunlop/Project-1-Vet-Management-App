@@ -5,16 +5,17 @@
 <h1 class="page-title">Add New Appointment</h1>
 
 
+
 <div class="form-container">
     <form class="add-form" action="/appointments" method="post">
 
         <div class="form-input">
             <label for="animal">Pet Name:</label>
             <select id="animal" name="animal_id">
-                <option disabled selected value> -- select an option -- </option>
+                
             {% for animal in all_animals %}
                 {%if animal.owner.registered == True%}
-                    <option value="{{ animal.id }}">{{animal.name}}</option>
+                    <option value="{{ animal.id }}" {% if animal.name == selected_animal.name %} selected="selected" {% endif %}>{{animal.name}}</option>
                 {%endif%}
             {% endfor %}
             </select>
@@ -23,9 +24,9 @@
         <div class="form-input">
             <label for="vet">Vet Name:</label>
             <select id="vet" name="vet_id">
-                <option disabled selected value> -- select an option -- </option>
+                
             {% for vet in all_vets %}
-                    <option value="{{ vet.id }}">{{vet.full_name}}</option>
+                    <option value="{{ vet.id }}" {% if vet.full_name == selected_animal.vet.full_name %} selected="selected" {% endif %} >{{vet.full_name}}</option>
             {% endfor %}
             </select>
         </div>
@@ -39,7 +40,11 @@
             <label for="appointment_time">Time: </label>
             <select id="appointment_time" name="appointment_time" required>
                 <option disabled selected value> -- select an option -- </option>
+                <!-- {% for vets_appointment in all_vets_appointments %}
+                {% if vets_appointment.appointment_time != "09:00" %} -->
                 <option value="09:00">09:00</option>
+                <!-- {% endif %}
+                {% endfor %} -->
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
                 <option value="12:00">12:00</option>
@@ -49,6 +54,10 @@
             </select>
         </div>
 
+        <!-- {% for vets_appointment in all_vets_appointments %}
+       
+        {{vets_appointment.appointment_time}}
+    {% endfor %} -->
 
         <!-- <div class="form-input">
             <label for="owner">Owner:</label>

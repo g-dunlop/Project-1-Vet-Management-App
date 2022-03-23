@@ -19,14 +19,20 @@ def appointments():
     # calendar = appointment_repository.create_calendar()
     return render_template("appointments/index.html", appointments = appointments, today_date = today_date)
 
-@appointments_blueprint.route("/appointments/new", methods=['GET'])
-def new_appointment():
+@appointments_blueprint.route("/appointments/<id>/new", methods=['GET'])
+def new_appointment(id):
+    selected_animal = animal_repository.select(id)
     animals = animal_repository.select_all()
     treatments = treatment_repository.select_all()
     owners = owner_repository.select_all()
     vets = vet_repository.select_all()
     today_date = appointment_repository.inject_today_date()
-    return render_template("appointments/new.html", all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets, today_date = today_date)
+
+    for vet in vets:
+        if vet.full_name == selected_animal.vet.full_name:
+            vets_appointments = vet_repository.appointments(vet)
+    
+    return render_template("appointments/new.html", all_animals = animals, all_treatments = treatments, all_owners = owners, all_vets = vets, today_date = today_date, selected_animal = selected_animal, all_vets_appointments = vets_appointments)
 
 
 @appointments_blueprint.route("/appointments", methods=['POST'])

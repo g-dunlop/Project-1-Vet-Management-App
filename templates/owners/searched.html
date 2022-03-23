@@ -5,18 +5,30 @@
 <h1 class="page-title">Results:</h1>
 
 
-<div class="item-card-container">
+<div class="items-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th> 
+      </tr>
+    </thead>
+
 {% for owner in owners %}
 
-  <a href="/owners/{{owner.id}}"><div class="item-card">
-    <p><span class="bold">Name: </span> {{owner.full_name}}</p>
+    <tr>
+      <td>{{owner.full_name}}</td>
+      <td>{{owner.phone_number}}</td>
+      <td>{{owner.email_address}}</td>
+      <td><a href="owners/{{owner.id}}">More Info</td>
+    </tr>
   
-  </div></a>
-
-
-
-{% endfor %}
+    {% endfor %}
+  </table>
 </div>
+
 
 
 {% endblock %}
