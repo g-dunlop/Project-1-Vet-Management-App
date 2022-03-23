@@ -24,6 +24,9 @@ vet_repository.save(vet1)
 vet2 = Vet('James Herriot')
 vet_repository.save(vet2)
 
+vet3 = Vet('Bernard Matthews')
+vet_repository.save(vet3)
+
 # vet1.first_name = 'Bob'
 # vet_repository.update(vet1)
 
@@ -33,6 +36,11 @@ owner_repository.save(owner1)
 owner2 = Owner("Graeme", "08564489733", "graeme.surname@mail.com", "5 The House, Larbert, FK9 2BE")
 owner_repository.save(owner2)
 
+owner3 = Owner("Jon", "023498593832", "jon.surname@gmail.com", "23 The Flat, Derby, DB8 2GB")
+owner_repository.save(owner3)
+
+owner4 = Owner("George", "084928320192", "george.surname@gmail.com", "The House, Dumfries, DG3 9KD")
+owner_repository.save(owner4)
 # owner2.phone_number = "099999999999"
 # owner_repository.update(owner2)
 
@@ -45,6 +53,12 @@ animal_repository.save(animal1)
 
 animal2 = Animal("Collin", "2018-12-15", "cat", owner2, vet1)
 animal_repository.save(animal2)
+
+animal3 = Animal("Sage", "2010-12-15", "dog", owner3, vet2)
+animal_repository.save(animal3)
+
+animal4 = Animal("Harris", "2013-08-28", "dog", owner4, vet2)
+animal_repository.save(animal4)
 
 # animal2.name = "Colin"
 # animal_repository.update(animal2)
@@ -89,6 +103,12 @@ treatment_repository.save(treatment2)
 treatment3 = Treatment("None", 0.00)
 treatment_repository.save(treatment3)
 
+treatment4 = Treatment("Neutering", 150.00)
+treatment_repository.save(treatment4)
+
+treatment5 = Treatment("De-worming", 25.00)
+treatment_repository.save(treatment5)
+
 # treatments = treatment_repository.select_all()
 # for treatment in treatments:
 #     print(treatment.__dict__)
@@ -105,15 +125,18 @@ treatments = treatment_repository.select_by_name("Vet consult")
 for treatment in treatments:
     print(treatment.__dict__)
 
-appointment1 = Appointment(animal1, vet1, '2022-08-21', '15:00', 'He is acting like a person', treatment1, "n/a")
+appointment1 = Appointment(animal1, vet1, '2022-08-21', '15:00', 'She is acting like a person', treatment1, "n/a")
 appointment_repository.save(appointment1)
+
+appointment2 = Appointment(animal2, vet2, '2022-02-25', '10:00', "Is being sick frequently", treatment5, "n/a")
+appointment_repository.save(appointment2)
 
 appointments = appointment_repository.select_all()
 for appointment in appointments:
     print(appointment.__dict__)
 
-appointment1.reason = "She is acting like a person"
-appointment_repository.update(appointment1)
+# appointment1.reason = "She is acting like a person"
+# appointment_repository.update(appointment1)
 
 # appointment = appointment_repository.select(7)
 # print(appointment.__dict__)

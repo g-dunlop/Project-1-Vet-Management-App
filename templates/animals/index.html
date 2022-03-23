@@ -2,16 +2,19 @@
 
 {% block content %}
 
-<h1 class="page-title">Animals</h1>
+<div class="title-and-search">
+  
 
-<div class="form-container">
-  <form class="form-inline my-2 my-lg-0" method="GET">
-    <input class="form-control mr-sm-2"
-      type="search" placeholder="Search" name="searched">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+  <div class="form-container">
+    <form class="form-inline my-2 my-lg-0" method="GET">
+      <input class="form-control mr-sm-2"
+        type="search" placeholder="Search" name="searched">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
 </div>
 
+<h1 class="page-title">Animals: {{animal_count}}</h1>
 <div class="item-card-container">
 {% for animal in animals %}
   <a href="/animals/{{animal.id}}"><div class="item-card">

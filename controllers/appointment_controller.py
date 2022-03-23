@@ -60,7 +60,7 @@ def delete_appointment(id):
 def show_appointment(id):
     appointment = appointment_repository.select(id)
     return render_template('appointments/show.html', appointment = appointment)
-
+ 
 @appointments_blueprint.route("/appointments/<id>/edit")
 def edit_appointment(id):
     appointment = appointment_repository.select(id)

@@ -10,15 +10,29 @@
 
 <div class="items-container">
   <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Pet Name</th>
+        <th>Owner</th>
+        <th>Reason</th>
+        <th>Treatment</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    
     {% for appointment in appointments %}
       {% if appointment.appointment_date > today_date %}
-    <tr>
-      
+
+      <tr>
+        
       {% if appointment.appointment_date == today_date %}
-       <td> <a href="/appointments/{{appointment.id}}">Today</a></td>
+       <td><a href="/appointments/{{appointment.id}}">Today</td>
       {% else %} 
-      <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+      <td><a href="/appointments/{{appointment.id}}"> {{appointment.appointment_date}}</td>
       {% endif %}
+    </a>
       <td>{{appointment.appointment_time}}</td>
       <td>{{appointment.animal.name}}</td>
       <td>{{appointment.animal.owner.full_name}}</td>
@@ -50,14 +64,25 @@
 <h2> Past:</h2>
 <div class="items-container">
   <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Pet Name</th>
+        <th>Owner</th>
+        <th>Reason</th>
+        <th>Treatment</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
     {% for appointment in appointments %}
       {% if appointment.appointment_date <= today_date %}
-    <tr>
+      <a href="/appointments/{{appointment.id}}"><tr>
       
       {% if appointment.appointment_date == today_date %}
-       <td> <a href="/appointments/{{appointment.id}}">Today</a></td>
+       <td> Today</td>
       {% else %} 
-      <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
+      <td> {{appointment.appointment_date}}</td>
       {% endif %}
       <td>{{appointment.appointment_time}}</td>
       <td>{{appointment.animal.name}}</td>
@@ -65,7 +90,7 @@
       <td>{{appointment.reason}}</td>
       <td>{{appointment.treatment.description}}</td>
       <td>{{appointment.notes}}</td>
-    </tr>
+    </tr></a>
       {% endif %}
     {% endfor %}
   </table>

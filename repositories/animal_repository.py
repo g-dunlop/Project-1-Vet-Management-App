@@ -98,3 +98,16 @@ def appointments(animal):
 def inject_today_date():
     today_date = datetime.date.today()
     return today_date
+
+def count_animals():
+    animals = []
+    sql = "SELECT * FROM animals"
+    results = run_sql(sql)
+    animals_length = 0
+    for row in results:
+        animal = Animal(row['name'], row['date_of_birth'], row['type'], row['owner_id'], row['vet_id'], row['id'])
+        # animal.date_of_birth = datetime.strptime(animal.date_of_birth, ("%Y-%m-%d"))
+        # animal.date_of_birth = animal.date_of_birth.strftime("%d/%m/%Y")
+        animals.append(animal)
+        animals_length = len(animals)
+    return animals_length

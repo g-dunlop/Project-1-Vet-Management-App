@@ -32,6 +32,13 @@
     margin:0.2rem;
 }
 
+.form-input > textarea{
+    width:148px;
+    text-align:center;
+    color:rgb(10, 10, 95);
+    margin:0.2rem;
+}
+
 .form-input > select{
     width:150px;
     text-align:center;

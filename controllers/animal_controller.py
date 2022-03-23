@@ -19,8 +19,8 @@ def animals():
         return render_template("animals/searched.html", animals=animals)
     else:
         animals = animal_repository.select_all()
-    
-    return render_template("animals/index.html", animals = animals)
+    animal_count = animal_repository.count_animals()
+    return render_template("animals/index.html", animals = animals, animal_count = animal_count)
 
 @animals_blueprint.route("/animals/new", methods=['GET'])
 def new_animal():

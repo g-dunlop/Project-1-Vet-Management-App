@@ -40,12 +40,24 @@
   <table>
     {% for appointment in appointments %}
     {% if appointment.appointment_date > today_date %}
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+       
+        <th>Vet</th>
+        <th>Reason</th>
+        <th>Treatment</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
         <tr>
           <td> <a href="/appointments/{{appointment.id}}">{{appointment.appointment_date}}</a></td>
-          <td>{{appointment.vet.full_name}}</td>
           <td>{{appointment.appointment_time}}</td>
+          <td>{{appointment.vet.full_name}}</td>
           <td>{{appointment.reason}}</td>
           <td>{{appointment.treatment.description}}</td>
+          <td>{{appointment.notes}}</td>
         </tr>
       {% endif %}
     {% endfor %}
