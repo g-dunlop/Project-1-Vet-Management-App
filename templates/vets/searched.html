@@ -18,6 +18,17 @@
     <tr>
       <td>{{vet.full_name}}</td>
       <td><a href="vets/{{vet.id}}">Go To Page</td>
+
+        <td>
+          <form action="/vets/{{vet.id}}/edit" method="GET">
+            <button>Edit</button>
+          </form>
+        </td>
+        
+        <td><form action="/vets/{{vet.id}}/delete" method="POST">
+            <button class="delete">Delete</button>
+          </form></td>
+          <td><a href="vets/{{vet.id}}">Vet Home Page</td>
     </tr>
   
     {% endfor %}

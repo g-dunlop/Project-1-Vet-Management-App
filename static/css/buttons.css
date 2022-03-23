@@ -22,8 +22,6 @@ button:hover {
     background-color: red;
 }
 
-
-
 .button-container {
     display:inline-flex;
 }
