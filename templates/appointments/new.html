@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="back-ground-color">
 <h1 class="page-title no-search">Add New Appointment</h1>
 
 
@@ -39,12 +39,8 @@
         <div class="form-input">
             <label for="appointment_time">Time: </label>
             <select id="appointment_time" name="appointment_time" required>
-                <option disabled selected value> -- select an option -- </option>
-                <!-- {% for vets_appointment in all_vets_appointments %}
-                {% if vets_appointment.appointment_time != "09:00" %} -->
+                <option disabled selected value> -- select an option -- </option>    
                 <option value="09:00">09:00</option>
-                <!-- {% endif %}
-                {% endfor %} -->
                 <option value="10:00">10:00</option>
                 <option value="11:00">11:00</option>
                 <option value="12:00">12:00</option>
@@ -88,10 +84,10 @@
 
         <div class="form-input">
             <label for="notes"> Notes: </label>
-            <textarea  id="notes" name="notes" placeholder="Reason for Visit"></textarea>
+            <textarea  id="notes" name="notes" placeholder="Notes"></textarea>
         </div>
 
-        <button class="add-button" type="submit">Add Appointment</button>
+        <button class="add-button" type="submit">Save Appointment</button>
 
     </form>
 </div>
@@ -113,7 +109,7 @@
       </thead>
       
       {% for appointment in all_appointments %}
-        {% if appointment.appointment_date > today_date %}
+        {% if appointment.appointment_date >= today_date %}
   
         <tr>
           
@@ -135,4 +131,5 @@
       {% endfor %}
     </table>
   </div>
+</div>
 {% endblock %}

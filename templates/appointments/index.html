@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="back-ground-color">
 <h1 class="page-title no-search">Appointments</h1>
 
 
@@ -23,7 +23,7 @@
     </thead>
     
     {% for appointment in appointments %}
-      {% if appointment.appointment_date > today_date %}
+      {% if appointment.appointment_date >= today_date %}
 
       <tr>
         
@@ -83,7 +83,7 @@
       </tr>
     </thead>
     {% for appointment in appointments %}
-      {% if appointment.appointment_date <= today_date %}
+      {% if appointment.appointment_date < today_date %}
       <a href="/appointments/{{appointment.id}}"><tr>
       
       {% if appointment.appointment_date == today_date %}
@@ -124,5 +124,5 @@
     <!-- {% endif %}
   {% endfor %}
   </div> -->
-
+</div>
 {% endblock %}
