@@ -36,7 +36,7 @@
   <p>The below images demonstrate some of my planning for the MVP stage of the project.  I made use of: Class and Object Diagrams, Wireframes, Db Tables Diagrams, a MSCW board and a useCase Diagram.
   <table>
     <tr>
-      <td>
+      <td <style>width="30%"</style>>
         <img src="https://user-images.githubusercontent.com/88304522/166924212-9f2ffb33-398d-4f0d-a9e9-c92789f32c44.png">
       </td>
       <td>
