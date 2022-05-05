@@ -5,6 +5,14 @@
 <h2>About</h2>
 <p>This was an individual project completed during week 5 of the CodeClan course.  We were given a choice of 4 briefs on the Thursday and would present our app to our colleagues the following Thursday. </p>
 
+<h2>Tools</h2>
+<ul>
+  <li>Python</li>
+  <li>Flask</li>
+  <li>Jinja</li>
+  <li>PostgreSQL</li>
+ </ul>
+
 <h3>Project Brief</h3>
 <p>A veterinary practice has approached you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet.</p>
 
@@ -75,13 +83,13 @@
 <img width="1268" alt="vma8_animals_searchresult" src="https://user-images.githubusercontent.com/88304522/166954960-cb9d782d-f2f3-42ff-aea6-5a9a68b62581.png">
 <img width="1268" alt="vma9_newappointmentform" src="https://user-images.githubusercontent.com/88304522/166954947-92d611b1-1695-4e5e-b04d-668b728b0073.png">
 
-<h2>Tools</h2>
-
 <h2>How to Run</h2>
- - clone repository to local computer
- - python3 console.py
- - install flask?
- - flask run
+<ul>
+  <li>clone repository to local computer</li>
+  <li>python3 console.py</li>
+  <li>install flask?</li>
+  <li>flask run</li>
+ </ul>
 
 <h2>What I learned</h2>
 
