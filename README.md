@@ -34,7 +34,8 @@
   
   <h4>Planning</h4>
   <p>The below images demonstrate some of my planning for the MVP stage of the project.  I made use of: Class and Object Diagrams, Wireframes, a Db Table Diagram, a MSCW board and a useCase Diagram.
-  <table>
+ 
+<table>
     <tr>
       <td style="width:30%;">
         <img src="https://user-images.githubusercontent.com/88304522/166924212-9f2ffb33-398d-4f0d-a9e9-c92789f32c44.png">
@@ -46,6 +47,7 @@
         <img src="https://user-images.githubusercontent.com/88304522/166924505-23eead73-4c99-43c2-bdde-c9351745d265.jpg">
       </td>
     </tr>
+  
     <tr>
       <td style="width:30%;">
         <img src="https://user-images.githubusercontent.com/88304522/166925430-d838c32c-5c22-427d-bf95-9c75480f9e6b.png">
@@ -56,7 +58,6 @@
       <td style="width:30%;">
         <img src="https://user-images.githubusercontent.com/88304522/166925610-0fdd5457-b976-48b0-8c8d-ca0bae61a86c.png">
       </td>
-
     </tr>
    </table>
    
