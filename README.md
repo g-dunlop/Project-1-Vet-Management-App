@@ -13,7 +13,7 @@
   <li>PostgreSQL</li>
  </ul>
 
-<h3>Project Brief</h3>
+<h2>Project Brief</h2>
 <p>A veterinary practice has approached you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet.</p>
 
 <h4>MVP</h4>
