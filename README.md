@@ -44,7 +44,6 @@
       </td>
       <td>
         <img src="https://user-images.githubusercontent.com/88304522/166924505-23eead73-4c99-43c2-bdde-c9351745d265.jpg">
-
       </td>
     </tr>
    </table>
