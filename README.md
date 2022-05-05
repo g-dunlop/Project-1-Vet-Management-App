@@ -7,6 +7,7 @@
 
 <h3>Project Brief</h3>
 <p>A veterinary practice has approached you to build a web application to help them manage their animals and vets. A vet may look after many animals at a time. An animal is registered with only one vet.</p>
+
 <h4>MVP</h4>
   <ul>
     <li>The practice wants to be able to register / track animals. Important information for the vets to know is:
@@ -35,28 +36,28 @@
   <h4>Planning</h4>
   <p>The below images demonstrate some of my planning for the MVP stage of the project.  I made use of: Class and Object Diagrams, Wireframes, a Db Table Diagram, a MSCW board and a useCase Diagram.
  
-<table>
+  <table>
     <tr>
       <td style="width:30%;">
-        <img src="https://user-images.githubusercontent.com/88304522/166924212-9f2ffb33-398d-4f0d-a9e9-c92789f32c44.png">
+        <img src="https://user-images.githubusercontent.com/88304522/166924212-9f2ffb33-398d-4f0d-a9e9-c92789f32c44.png"/>
       </td>
       <td style="width:30%;">
-        <img src="https://user-images.githubusercontent.com/88304522/166924388-c00aca84-ee71-4a09-a83c-11405077a461.png">
+        <img src="https://user-images.githubusercontent.com/88304522/166924388-c00aca84-ee71-4a09-a83c-11405077a461.png"/>
       </td>
       <td style="width:30%;">
-        <img src="https://user-images.githubusercontent.com/88304522/166924505-23eead73-4c99-43c2-bdde-c9351745d265.jpg">
+        <img src="https://user-images.githubusercontent.com/88304522/166924505-23eead73-4c99-43c2-bdde-c9351745d265.jpg"/>
       </td>
     </tr>
   
     <tr>
       <td style="width:30%;">
-        <img src="https://user-images.githubusercontent.com/88304522/166925430-d838c32c-5c22-427d-bf95-9c75480f9e6b.png">
+        <img src="https://user-images.githubusercontent.com/88304522/166925430-d838c32c-5c22-427d-bf95-9c75480f9e6b.png"/>
       </td>
       <td style="width:30%;">
-        <img src="https://user-images.githubusercontent.com/88304522/166925523-0f93b573-a75b-48ea-9d15-e5f53529a480.png">
+        <img src="https://user-images.githubusercontent.com/88304522/166925523-0f93b573-a75b-48ea-9d15-e5f53529a480.png"/>
       </td>
       <td style="width:30%;">
-        <img src="https://user-images.githubusercontent.com/88304522/166925610-0fdd5457-b976-48b0-8c8d-ca0bae61a86c.png">
+        <img src="https://user-images.githubusercontent.com/88304522/166925610-0fdd5457-b976-48b0-8c8d-ca0bae61a86c.png"/>
       </td>
     </tr>
    </table>
