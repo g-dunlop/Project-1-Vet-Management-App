@@ -93,6 +93,11 @@
 
 <h2>What I learned</h2>
 
+<ul>
+  <li>Routes & Connections.</li>
+  <li>Passing variables into Jinja templates.</li>
+  <li>Need to really think through what I'm trying to do extensions/user journey.</li>
+</ul>
 
 <h2>What I would do differently</h2>
 <ul>
@@ -100,3 +105,5 @@
   <li>Less clicks for users to get where they want to go.</li>
   <li>Confirmation for form completion/updates plus appropriate redirects.</li>
 </ul>
+
+
