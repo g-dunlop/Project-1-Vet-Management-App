@@ -78,6 +78,10 @@
 <h2>Tools</h2>
 
 <h2>How to Run</h2>
+- clone repository to local computer
+- python3 console.py
+- install flask?
+- flask run
 
 <h2>What I learned</h2>
 
