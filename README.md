@@ -21,6 +21,16 @@
     <li>CRUD actions for vets / animals</li>
    </ul>
    
+ <h4>Possible Extensions</h4>
+  <ul>
+  <li>Mark owners as unregistered.  Unregistered owners can't add animals </li>
+  <li>Owners can have multiple animals</li>
+  <li>Add search bar to index.html pages to find animals/owners quickly</li>
+  <li>Sort animals/owners alphabetically</li>
+  <li>Add CRUD functionality for appointments and treatments</li>
+   <li>Vets/animals display upcoming appointments arranged by date.  Also, display past appointments for animals so we can see their treatment history.</li>
+  </ul>
+   
 <h2>Screenshots</h2>
 
 <h2>Tools</h2>
