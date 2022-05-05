@@ -94,24 +94,24 @@
 <h2>How to Run</h2>
 <ul>
   <li>clone repository to local computer</li>
+  <li>pip install flask</li>
   <li>python3 console.py</li>
-  <li>install flask?</li>
   <li>flask run</li>
  </ul>
 
 <h2>What I learned</h2>
 
 <ul>
-  <li>Routes & Connections.</li>
-  <li>Passing variables into Jinja templates.</li>
-  <li>Need to really think through what I'm trying to do extensions/user journey.</li>
+  <li>I learned a lot about RESTful routes in this project and using repositories and controllers to link back-end data to the front-end.</li>
+  <li>I became more comfortable with passing variables around, especially into Jinja templates.</li>
+  <li>I learner that I need to really think through what I'm trying to do in terms of extensions and the user journey.  I don't feel I had a clear user in mind, ense the app not really looking like a professional piece of software.  For extensions, I need to plan with the same care and consideration that I give at the start to the MVP.</li>
 </ul>
 
 <h2>What I would do differently</h2>
 <ul>
-  <li>Make it impossible to double book vet appointments.</li>
-  <li>Less clicks for users to get where they want to go.</li>
-  <li>Confirmation for form completion/updates plus appropriate redirects.</li>
+  <li>I would like to make it impossible to double book vet appointments if there is a time conflict, although I feel this will be more possible in JavaScript.</li>
+  <li>I feel like there are some navigation issues and we need less clicks for users to get where they want to go, perhap more information together on one page rather than separate pages for everything.</li>
+  <li>Users need confirmation/feedback for form completion/updates (They need to know what they've done worked!), plus appropriate redirects after form submission.</li>
 </ul>
 
 
