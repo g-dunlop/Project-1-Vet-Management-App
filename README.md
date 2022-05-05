@@ -95,3 +95,8 @@
 
 
 <h2>What I would do differently</h2>
+<ul>
+  <li>Make it impossible to double book vet appointments.</li>
+  <li>Less clicks for users to get where they want to go.</li>
+  <li>Confirmation for form completion/updates plus appropriate redirects.</li>
+</ul>
