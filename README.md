@@ -31,6 +31,17 @@
   <li>Add CRUD functionality for appointments and treatments</li>
    <li>Vets/animals display upcoming appointments arranged by date.  Also, display past appointments for animals so we can see their treatment history.</li>
   </ul>
+  
+  <h4>Planning</h4>
+  <p>The below images demonstrate some of my planning for the MVP stage of the project.  I made use of: Class and Object Diagrams, Wireframes, Db Tables Diagrams, a MSCW board and a useCase Diagram.
+  <table>
+    <tr>
+      <td>![ClassDiagrams - MVP drawio](https://user-images.githubusercontent.com/88304522/166924212-9f2ffb33-398d-4f0d-a9e9-c92789f32c44.png)
+</td>
+      <td></td>
+      <td></td>
+    </tr>
+   </table>
    
 <h2>Screenshots</h2>
 
