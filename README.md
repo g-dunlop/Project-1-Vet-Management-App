@@ -46,7 +46,7 @@
         <img src="https://user-images.githubusercontent.com/88304522/166924505-23eead73-4c99-43c2-bdde-c9351745d265.jpg">
       </td>
     </tr>
-
+    <tr>
       <td style="width:30%;">
         <img src="https://user-images.githubusercontent.com/88304522/166925430-d838c32c-5c22-427d-bf95-9c75480f9e6b.png">
       </td>
