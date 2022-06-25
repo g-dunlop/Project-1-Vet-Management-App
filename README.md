@@ -1,7 +1,5 @@
 # Project-1-Vet-Management-App
 
-<h2><a href="">Link to working site</a></h2>
-
 <h2>About</h2>
 <p>This was an individual project completed during week 5 of the CodeClan course.  We were given a choice of 4 briefs on the Thursday and would present our app to our colleagues the following Thursday. </p>
 
