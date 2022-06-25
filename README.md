@@ -3,6 +3,26 @@
 <h2>About</h2>
 <p>This was an individual project completed during week 5 of the CodeClan course.  We were given a choice of 4 briefs on the Thursday and would present our app to our colleagues the following Thursday. </p>
 
+<h2>Screenshots</h2>
+<p>For a short video preview of the app, please visit my  <a href="https://g-dunlop.github.io/g-dunlop-portfolio-website/">portfolio site</a>:
+<table>
+  <tr>
+    <td><img width="1158" alt="vma_1_homepage" src="https://user-images.githubusercontent.com/88304522/166954895-d69c28dd-0dd3-47e4-8468-1fe36346cd59.png"></td>
+    <td><img width="1280" alt="vma_2_vets_page" src="https://user-images.githubusercontent.com/88304522/166954890-d5936b12-a3f4-488e-9366-e4c5123284ce.png"></td>
+    <td><img width="1160" alt="vma_3_vet_homepage" src="https://user-images.githubusercontent.com/88304522/166954873-8e256c1a-a83b-4c81-a82d-bf4b78325e01.png"></td>
+  </tr>
+  <tr>
+    <td><img width="1268" alt="vma4_animal_homepage" src="https://user-images.githubusercontent.com/88304522/166954989-c9e050dc-3040-4da3-83ba-51d3afaf3ba3.png"></td>
+    <td><img width="1268" alt="vma5_admin_dropdown" src="https://user-images.githubusercontent.com/88304522/166954971-7d2b8c5f-0ae2-4eca-a974-001378fdd622.png"></td>
+    <td><img width="1268" alt="vma6_all_animals" src="https://user-images.githubusercontent.com/88304522/166954968-73f55def-65d6-4a1c-80b9-88358242e919.png"></td>
+  </tr>
+  <tr>
+    <td><img width="1268" alt="vma7_animals_search" src="https://user-images.githubusercontent.com/88304522/166954964-9fef866d-587c-48b8-a8a3-59a482e3881a.png"></td>
+    <td><img width="1268" alt="vma8_animals_searchresult" src="https://user-images.githubusercontent.com/88304522/166954960-cb9d782d-f2f3-42ff-aea6-5a9a68b62581.png"></td>
+    <td><img width="1268" alt="vma9_newappointmentform" src="https://user-images.githubusercontent.com/88304522/166954947-92d611b1-1695-4e5e-b04d-668b728b0073.png"></td>
+  </tr>
+ </table>
+
 <h2>Tools</h2>
 <ul>
   <li>Python</li>
@@ -69,25 +89,7 @@
 
 
 
-<h2>Screenshots</h2>
 
-<table>
-  <tr>
-    <td><img width="1158" alt="vma_1_homepage" src="https://user-images.githubusercontent.com/88304522/166954895-d69c28dd-0dd3-47e4-8468-1fe36346cd59.png"></td>
-    <td><img width="1280" alt="vma_2_vets_page" src="https://user-images.githubusercontent.com/88304522/166954890-d5936b12-a3f4-488e-9366-e4c5123284ce.png"></td>
-    <td><img width="1160" alt="vma_3_vet_homepage" src="https://user-images.githubusercontent.com/88304522/166954873-8e256c1a-a83b-4c81-a82d-bf4b78325e01.png"></td>
-  </tr>
-  <tr>
-    <td><img width="1268" alt="vma4_animal_homepage" src="https://user-images.githubusercontent.com/88304522/166954989-c9e050dc-3040-4da3-83ba-51d3afaf3ba3.png"></td>
-    <td><img width="1268" alt="vma5_admin_dropdown" src="https://user-images.githubusercontent.com/88304522/166954971-7d2b8c5f-0ae2-4eca-a974-001378fdd622.png"></td>
-    <td><img width="1268" alt="vma6_all_animals" src="https://user-images.githubusercontent.com/88304522/166954968-73f55def-65d6-4a1c-80b9-88358242e919.png"></td>
-  </tr>
-  <tr>
-    <td><img width="1268" alt="vma7_animals_search" src="https://user-images.githubusercontent.com/88304522/166954964-9fef866d-587c-48b8-a8a3-59a482e3881a.png"></td>
-    <td><img width="1268" alt="vma8_animals_searchresult" src="https://user-images.githubusercontent.com/88304522/166954960-cb9d782d-f2f3-42ff-aea6-5a9a68b62581.png"></td>
-    <td><img width="1268" alt="vma9_newappointmentform" src="https://user-images.githubusercontent.com/88304522/166954947-92d611b1-1695-4e5e-b04d-668b728b0073.png"></td>
-  </tr>
- </table>
 
 <h2>How to Run</h2>
 <ul>
